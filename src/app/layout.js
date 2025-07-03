@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import "./global.css";
+
+import "./globals.css";
 import { Kaisei_Opti } from 'next/font/google';
 
 const kaiseiOpti = Kaisei_Opti({

@@ -11,8 +11,8 @@ module.exports = {
         serif: ['var(--font-kaisei-opti)', 'serif'],
       },
       colors: {
-        'text-primary': '#000000',
-        'text-accent': '#0FE400',
+        'primary': '#000000',
+        'accent': '#0FE400',
       },
     },
   },
