@@ -1,5 +1,4 @@
 import Head from 'next/head'
-
 import "./globals.css";
 import { Kaisei_Opti } from 'next/font/google';
 

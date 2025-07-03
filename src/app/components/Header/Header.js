@@ -11,11 +11,11 @@ export const Header = () => {
 
             <nav className="col-span-6 col-start-7 pt-14">
               <ul className="hidden md:flex justify-end space-x-6">
-                <a href="#" className="text-sm text-accent font-medium hover:text-accent">Lessons</a>
-                <a href="#" className="text-sm text-accent font-medium hover:text-accent">Journal</a>
-                <a href="#" className="text-sm text-accent font-medium hover:text-accent">Back Page</a>
-                <a href="#" className="text-sm text-accent font-medium hover:text-accent">Calendar</a>
-                <a href="#" className="text-sm text-accent font-medium hover:text-accent">Contact</a>
+                <a href="#" className="text-sm font-display hover:text-accent font-medium">Lessons</a>
+                <a href="#" className="text-sm font-display hover:text-accent font-medium">Journal</a>
+                <a href="#" className="text-sm font-display hover:text-accent font-medium">Back Page</a>
+                <a href="#" className="text-sm font-display hover:text-accent font-medium">Calendar</a>
+                <a href="#" className="text-sm font-display hover:text-accent font-medium">Contact</a>
               </ul>
             </nav>
         </div>
