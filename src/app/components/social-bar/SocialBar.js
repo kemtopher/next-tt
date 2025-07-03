@@ -5,9 +5,9 @@ import IconOnlyfans from '../icons/IconOnlyfans'
 import IconBluesky from '../icons/IconBluesky'
 import IconYoutube from '../icons/IconYoutube'
 
-export const SocialBar = () => {
+export const SocialBar = ({ width= "w-1/2" }) => {
   return (
-    <div className="flex gap-y-3.5 justify-between">
+    <div className={`${width} flex justify-between gap-2`}>
         <IconInstagram />
         <IconOnlyfans />
         <IconBluesky />
