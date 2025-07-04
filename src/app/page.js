@@ -1,14 +1,14 @@
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
-import { GridContainer } from "./components/GridContainer/GridContainer";
 import { PageHeader } from "./components/PageHeader/PageHeader";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main className="w-full">
-        <PageHeader title="Journal" />
+      <PageHeader title="Journal" />
+      <main className="w-full bg-amber-50 pt-8 md:pt-12 lg:pt-18">
+
       </main>
       <Footer />
     </>    
