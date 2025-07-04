@@ -4,7 +4,7 @@ import { SocialBar } from '../social-bar/SocialBar'
 
 export const Header = () => {
   return (
-    <header className="h-52 w-full grid-cols-12 border-b-1 border-black">
+    <header className="h-45 w-full border-b-1 border-black">
         <div className="w-full flex justify-between">
             <div className="col-span-2 pt-7 self-center">
                 <MainLogo />
