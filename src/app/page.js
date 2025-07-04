@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Header />
       <PageHeader title="Journal" />
-      <main className="w-full bg-amber-50 pt-8 md:pt-12 lg:pt-18">
+      <main className="w-full pt-8 md:pt-12 lg:pt-18">
 
       </main>
       <Footer />
