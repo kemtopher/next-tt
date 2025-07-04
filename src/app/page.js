@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <>
       <Header />
-      <SubHeader content="Pianist, Teacher, Raconteur, Poncey Lad"/>
       <main className="w-full pt-8 md:pt-12 lg:pt-18">
         <HeroMain />
+        <SubHeader content="Pianist, Teacher, Raconteur, Poncey Lad"/>
       </main>
       <Footer />
     </>    
