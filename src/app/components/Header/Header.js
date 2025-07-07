@@ -1,6 +1,6 @@
 import React from 'react'
 import { MainLogo } from '../MainLogo/MainLogo'
-import { SocialBar } from '../social-bar/SocialBar'
+import { SocialBar } from '../SocialBar/SocialBar'
 
 export const Header = () => {
   return (
@@ -20,7 +20,7 @@ export const Header = () => {
                   <a href="#" className="text-sm font-display hover:text-accent font-medium">Contact</a>
                 </ul>
               </nav>
-              <div className="flex justify-end mt-8">
+              <div className="flex justify-end">
                 <SocialBar />
               </div>
             </div>
