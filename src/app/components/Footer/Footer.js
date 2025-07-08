@@ -18,7 +18,7 @@ export const Footer = () => {
           <div className="h-full col-span-3 md:col-span-6 flex justify-end">
             <div className="text-left">
               <p className="font-display text-xs sm:text-base">Find me on the web</p>
-              <SocialBar mt="4" />
+              <SocialBar />
             </div>
           </div>
         </GridContainer>
