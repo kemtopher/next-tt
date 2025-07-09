@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import "./globals.css";
 import { Kaisei_Opti } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 
 const kaiseiOpti = Kaisei_Opti({
   subsets: ['latin'],
@@ -8,6 +9,13 @@ const kaiseiOpti = Kaisei_Opti({
   display: 'swap',
   variable: '--font-kaisei-opti',
 });
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+  variable: '--font-kaisei-opti',
+})
 
 
 export const metadata = {
@@ -19,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${kaiseiOpti.variable} px-4 md:px-10 lg:px-18`}
+        className={`${kaiseiOpti.variable} ${montserrat.variable} px-4 md:px-10 lg:px-18`}
       >
         {children}
       </body>
