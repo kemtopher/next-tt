@@ -1,10 +1,11 @@
 import React from 'react';
 
-const IconBluesky = () => (
+const IconBluesky = ({classes}) => (
   <svg
     id="IconBluesky" 
-    width="48"
-    height="48"
+    // width="48"
+    // height="48"
+    className={classes}
     role="img"
     aria-label="Bluesky icon"
     viewBox="0 0 468.2 468.2"

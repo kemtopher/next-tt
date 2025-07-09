@@ -1,10 +1,11 @@
 import React from 'react';
 
-const IconInstagram = () => (
+const IconInstagram = ({classes}) => (
   <svg 
     id="IconInstagram"
-    width="48"
-    height="48"
+    // width="48"
+    // height="48"
+    className={classes}
     role="img"
     aria-label="Instagram icon"
     viewBox="0 0 468.2 468.2"

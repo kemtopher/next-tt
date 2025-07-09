@@ -1,11 +1,12 @@
 import React from 'react';
 
-const IconOnlyfans = () => (
+const IconOnlyfans = ({classes}) => (
   <svg
     id="IconOnlyfans"
     fill="#000"
-    width="48"
-    height="48"
+    // width="48"
+    // height="48"
+    className={classes}
     role="img"
     aria-label="OnlyFans icon"
     xmlns="http://www.w3.org/2000/svg"
