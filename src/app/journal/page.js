@@ -38,7 +38,7 @@ export default function Journal() {
   return (
     <>
         <Header />
-        <main className="w-full pt-8 md:pt-12 lg:pt-18">
+        <main className="w-full pb-8 md:pb-12 lg:pb-18">
             <PageHeader title="JOURNAL" />
             <GridContainer>
                 <div className="h-full py-16 col-span-6 md:col-span-10 lg:col-span-9 xl:col-span-7 flex flex-col gap-8">

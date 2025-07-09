@@ -3,7 +3,7 @@ import { GridContainer } from '../GridContainer/GridContainer'
 
 export const HeroMain = () => {
   return (
-    <section className="w-full h-[581px] pb-15 md:pb-26">
+    <section className="w-full h-[581px] pt-8 md:pt-12 lg:pt-18 pb-15 md:pb-26">
         <GridContainer>
             <div className="col-span-4 md:col-span-6">
                 <div className="h-full flex flex-col items-start md:items-center justify-end">
