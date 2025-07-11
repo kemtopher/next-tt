@@ -1,11 +1,10 @@
 import React from 'react'
-import { Header } from '../../components/Header/Header'
 import { GridContainer } from '../../components/GridContainer/GridContainer'
 import { PageHeader } from '../../components/PageHeader/PageHeader'
-import { Footer } from '../../components/Footer/Footer'
 import { BackPageCard } from '../../components/BackPagCard/BackPageCard'
 
 export default function BackPage() {
+
     const rows = [];
     for (let i = 0; i < 6; i++) {
         rows.push(<BackPageCard key={i}/>);
