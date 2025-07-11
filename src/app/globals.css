@@ -1,14 +1,14 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 html {
   font-size: 16px; /*  set for safety purposes  */
 }
 
 @theme {
-  --font-display: "Kaisei Opti", serif;
-  --font-secondary: "Montserrat", sans-serif;
+  --font-display: 'Kaisei Opti', serif;
+  --font-secondary: 'Montserrat', sans-serif;
   --color-primary: #000000;
-  --color-accent: #0FE400;
+  --color-accent: #0fe400;
   --color-avocado-300: oklch(0.94 0.11 115.03);
   --color-avocado-400: oklch(0.92 0.19 114.08);
   --color-avocado-500: oklch(0.84 0.18 117.33);

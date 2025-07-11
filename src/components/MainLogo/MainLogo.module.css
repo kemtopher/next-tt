@@ -1,33 +1,36 @@
-.st0, .st1, .st2 {
-    fill: none;
+.st0,
+.st1,
+.st2 {
+  fill: none;
 }
 
 .st3 {
-    isolation: isolate;
+  isolation: isolate;
 }
 
 .st1 {
-    stroke: blue;
-    stroke-width: 2.6px;
+  stroke: blue;
+  stroke-width: 2.6px;
 }
 
-.st1, .st2 {
-    stroke-miterlimit: 10;
+.st1,
+.st2 {
+  stroke-miterlimit: 10;
 }
 
 .st4 {
-    clip-path: url(#clippath-1);
+  clip-path: url(#clippath-1);
 }
 
 .st5 {
-    clip-path: url(#clippath-2);
+  clip-path: url(#clippath-2);
 }
 
 .st6 {
-    fill: #fff;
+  fill: #fff;
 }
 
 .st2 {
-    stroke: #000;
-    stroke-width: 3.5px;
+  stroke: #000;
+  stroke-width: 3.5px;
 }

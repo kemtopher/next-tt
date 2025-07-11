@@ -9,13 +9,17 @@ export const ImageWithText = ({
   imagePosition = 'left',
   imageStackOrder = 'top',
   content,
-  classes
+  classes,
 }) => {
-  const desktopDirection = imagePosition === 'left' ? 'md:flex-row' : 'md:flex-row-reverse';
-  const mobileDirection = imageStackOrder === 'top' ? 'flex-col' : 'flex-col-reverse';
+  const desktopDirection =
+    imagePosition === 'left' ? 'md:flex-row' : 'md:flex-row-reverse';
+  const mobileDirection =
+    imageStackOrder === 'top' ? 'flex-col' : 'flex-col-reverse';
 
   return (
-    <section className={`flex gap-8 lg:gap-14 py-18 lg:py-20 justify-between ${mobileDirection} ${desktopDirection} w-full h-full border-b ${classes}`}>
+    <section
+      className={`flex gap-8 lg:gap-14 py-18 lg:py-20 justify-between ${mobileDirection} ${desktopDirection} w-full h-full border-b ${classes}`}
+    >
       <div className="relative w-full md:w-1/2 aspect-square">
         <Image
           src={imageUrl}
