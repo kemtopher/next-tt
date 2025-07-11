@@ -12,14 +12,12 @@ export default function BackPage() {
     }
   return (
     <>
-        <Header />
         <main className="w-full pb-8 md:pb-12 lg:pb-18">
             <PageHeader title="BACK PAGE" />
             <GridContainer classes="gap-y-12 md:gap-y-20 pt-18" gapx="gap-x-8" gapxmd="md:gap-x-12">
                 {rows}
             </GridContainer>
         </main>
-        <Footer />
     </>
   )
 }

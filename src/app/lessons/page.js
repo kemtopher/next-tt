@@ -16,7 +16,6 @@ export default function Lessons() {
                     ))
   return (
     <>
-        <Header />
         <main className="w-full pb-8 md:pb-12 lg:pb-18">
             <PageHeader title="LESSONS" />
             <GridContainer classes="pt-16 flex flex-col">
@@ -35,7 +34,6 @@ export default function Lessons() {
                 />
             </GridContainer>
         </main>
-        <Footer />
     </>
   )
 }
