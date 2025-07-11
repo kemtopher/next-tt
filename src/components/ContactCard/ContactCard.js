@@ -29,12 +29,12 @@ export const ContactCard = ({ name, title, phone, email, website }) => {
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="border border-stone-300 text-slate-800 shadow-md py-10 px-15 max-w-lg w-full">
+      <div className="border shadow-md py-10 px-15 max-w-lg w-full">
         <div className="font-display font-bold text-3xl mb-1">{name}</div>
         <div className="font-display italic mb-4">{title}</div>
         <div className="font-display text-md space-y-1">
           <p className="font-secondary">
-            <span className="font-display font-medium">Phone:</span>{' '}
+            <span className="font-display font-bold">Phone:</span>{' '}
             <a
               href="tel:+16783607349"
               className="text-slate-600 hover:text-accent"
@@ -43,7 +43,7 @@ export const ContactCard = ({ name, title, phone, email, website }) => {
             </a>
           </p>
           <p>
-            <span className="font-display font-medium">Email:</span>{' '}
+            <span className="font-display font-bold">Email:</span>{' '}
             <a
               href={`mailto:${email}`}
               className="font-secondary text-slate-600 hover:text-accent hover:underline"
@@ -52,7 +52,7 @@ export const ContactCard = ({ name, title, phone, email, website }) => {
             </a>
           </p>
           <p>
-            <span className="font-display font-medium">Website:</span>{' '}
+            <span className="font-display font-bold">Website:</span>{' '}
             <a
               href={website}
               className="font-secondary text-slate-600 hover:text-accent hover:underline"
