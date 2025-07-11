@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
           <QuoteBlock
             content={quoteRich}
             author="William Blake"
-        />
+          />
         <Footer />
       </body>
     </html>
