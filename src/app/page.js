@@ -1,9 +1,9 @@
-import { Header } from "../components/Header/Header";
-import { Footer } from "../components/Footer/Footer";
 import { SubHeader } from "../components/SubHeader/SubHeader";
 import { HeroMain } from "../components/HeroMain/HeroMain";
 
 export default function Home() {
+  
+
   return (
     <>
       <main className="w-full">

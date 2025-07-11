@@ -1,16 +1,9 @@
 import React from 'react'
 import { PageHeader } from "../../components/PageHeader/PageHeader"
 import { GridContainer } from '../../components/GridContainer/GridContainer'
-import { QuoteBlock } from '../../components/QuoteBlock/QuoteBlock'
 import { ContactCard } from '../../components/ContactCard/ContactCard';
 
-
 export default function Contact() {
-    const quote = `He who who binds to himself a joy\n\nDoes the winged life destroy;\n\nHe who kisses the joy as it flies\n\nLives in eternity’s sunrise.`;
-
-    const quoteRich = quote.split('\n').map((line, i) => (
-        <p key={i}>{line}</p>
-    ))
 
     const generateVCard = ({ name, title, phone, email, website }) => {
         return `BEGIN:VCARD
@@ -38,7 +31,6 @@ export default function Contact() {
                     />
                 </div>
             </GridContainer>
-            <QuoteBlock content={quoteRich} />
         </main>
     </>    
   )
