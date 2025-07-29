@@ -12,7 +12,7 @@ export const Header = () => {
         <div className="self-center w-[92px] h-[106px] relative">
           <Link href="/">
             {/* use scale(600) */}
-            <MainLogo classes="w-full h-full absolute top-0 left-0 origin-top-left transition-transform duration-500" />
+            <MainLogo classes={styles.scaleLogo} />
           </Link>
         </div>
 

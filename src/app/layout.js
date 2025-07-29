@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${kaiseiOpti.variable} ${montserrat.variable} px-4 md:px-10 lg:px-18 2xl:max-w-[1700px] 2xl:m-auto`}
+        className={`${kaiseiOpti.variable} ${montserrat.variable} pt-40 px-4 md:px-10 lg:px-18 2xl:max-w-[1700px] 2xl:m-auto`}
       >
         <Header />
         {children}
