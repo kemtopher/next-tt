@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { PrismicRichText } from '@prismicio/react';
 
 export const ImageWithText = ({
   imageUrl,
@@ -10,6 +11,7 @@ export const ImageWithText = ({
   imageStackOrder = 'top',
   content,
   classes,
+  endingQuote
 }) => {
   const desktopDirection =
     imagePosition === 'left' ? 'md:flex-row' : 'md:flex-row-reverse';
@@ -35,10 +37,12 @@ export const ImageWithText = ({
         <div className="max-w-prose text-left font-display text-xl md:text-xl/9 lg:text-2xl/9 xl:text-3xl/12">
           {content}
         </div>
-
-        <div className="max-w-prose text-left italic font-display font-semibold text-xl md:text-2xl/9 lg:text-2xl/9 xl:text-4xl/12 2xl:text-5xl/18">
-          Anything is possible ...
-        </div>
+        <PrismicRichText
+          field={endingQuote}
+          components={{
+            paragraph: ({children}) => <p className="max-w-prose text-left italic font-display font-semibold text-xl md:text-2xl/9 lg:text-2xl/9 xl:text-4xl/12 2xl:text-5xl/18">{children}</p>
+          }}
+        />
       </div>
     </section>
   );
