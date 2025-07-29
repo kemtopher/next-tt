@@ -2,7 +2,7 @@
 
 .header {
     height: 160px;
-    width: calc(100% - 144px);
+    width: calc(100% - 2rem);
     position: fixed;
     top: 0;
     left: 1rem;
@@ -12,13 +12,14 @@
 @media (min-width: 768px) {
   .header {
     left: 2.5rem;
+    width: calc(100% - 5rem);
   }
 }
 
 @media (min-width: 1024px) {
   .header {
     left: 4.5rem;
-    width: calc(100% - 144px);
+    width: calc(100% - 9rem);
   }
 }
 

@@ -3,10 +3,11 @@ import { MainLogo } from '../MainLogo/MainLogo';
 import { SocialBar } from '../SocialBar/SocialBar';
 import Link from 'next/link';
 import { px } from 'framer-motion';
+import styles from "./Header.module.css"
 
 export const Header = () => {
   return (
-    <header className="h-40 w-full border-b-0 border-black relative">
+    <header className={styles.header}>
       <div className="w-full py-7 flex justify-between items-center">
         <div className="self-center w-[92px] h-[106px] relative">
           <Link href="/">
