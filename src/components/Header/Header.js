@@ -5,15 +5,15 @@ import Link from 'next/link';
 
 export const Header = () => {
   return (
-    <header className="h-45 w-full border-b-1 border-black">
-      <div className="w-full flex justify-between">
-        <div className="col-span-2 pt-7 self-center">
+    <header className="h-40 w-full border-b-1 border-black">
+      <div className="w-full py-7 flex justify-between items-center">
+        <div className="col-span-2 self-center">
           <Link href="/">
             <MainLogo />
           </Link>
         </div>
 
-        <div className="hidden md:flex flex-col col-span-6 col-start-7 pt-14 self-start">
+        <div className="h-2/3 hidden md:flex flex-col justify-between self-center">
           <nav>
             <ul className="hidden md:flex justify-end space-x-6">
               <Link
