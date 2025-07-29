@@ -7,7 +7,7 @@ export const Header = () => {
   return (
     <header className="h-40 w-full border-b-1 border-black">
       <div className="w-full py-7 flex justify-between items-center">
-        <div className="col-span-2 self-center">
+        <div className="self-center">
           <Link href="/">
             <MainLogo />
           </Link>
