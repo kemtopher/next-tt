@@ -2,14 +2,16 @@ import React from 'react';
 import { MainLogo } from '../MainLogo/MainLogo';
 import { SocialBar } from '../SocialBar/SocialBar';
 import Link from 'next/link';
+import { px } from 'framer-motion';
 
 export const Header = () => {
   return (
-    <header className="h-40 w-full border-b-1 border-black">
+    <header className="h-40 w-full border-b-0 border-black relative">
       <div className="w-full py-7 flex justify-between items-center">
-        <div className="self-center">
+        <div className="self-center w-[92px] h-[106px] relative">
           <Link href="/">
-            <MainLogo />
+            {/* use scale(600) */}
+            <MainLogo classes="w-full h-full absolute top-0 left-0 origin-top-left transition-transform duration-500" />
           </Link>
         </div>
 

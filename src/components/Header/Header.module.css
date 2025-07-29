@@ -1,0 +1,43 @@
+/* h-40 right-[72px] w-[calc(100%-144px)] top-0 left-[72px] border-b-0 border-black fixed */
+
+.header {
+    height: 160px;
+    width: calc(100% - 144px);
+    position: fixed;
+    top: 0;
+    left: 1rem;
+    border-bottom: 0px solid #000000;
+}
+
+@media (min-width: 768px) {
+  .header {
+    left: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    left: 4.5rem;
+    width: calc(100% - 144px);
+  }
+}
+
+@media (min-width: 1536px) {
+  .header {
+    max-width: 1700px;
+    margin: 0 auto;
+  }
+}
+
+.scale-logo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(6);
+  transform-origin: top left;
+  transition: transform 500ms;
+}
+
+

@@ -1,6 +1,7 @@
 'use client'
 
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion'
 import { PrismicRichText } from '@prismicio/react'
 import { GridContainer } from '../GridContainer/GridContainer';
 
@@ -8,8 +9,8 @@ export const HeroMain = ({ header, subheader }) => {
   return (
     <section className="w-full h-[581px] pt-8 md:pt-12 lg:pt-18 pb-15 md:pb-26">
       <GridContainer>
-        <div className="col-span-4 md:col-span-6">
-          <div className="h-full flex flex-col items-start md:items-center justify-end">
+        <div className="md:col-start-8 col-span-4 md:col-span-6">
+          <div className="h-full flex flex-col justify-end">
             <div className="compo flex flex-col max-w-xs md:max-w-full gap-4 md:gap-8">
                 <PrismicRichText 
                   field={header} 
