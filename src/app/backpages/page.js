@@ -3,7 +3,7 @@ import { GridContainer } from '../../components/GridContainer/GridContainer';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { BackPageCard } from '../../components/BackPagCard/BackPageCard';
 
-export default function BackPage() {
+export default function BackPages() {
   const rows = [];
   for (let i = 0; i < 6; i++) {
     rows.push(<BackPageCard key={i} />);

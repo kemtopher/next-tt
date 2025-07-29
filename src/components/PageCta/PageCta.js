@@ -1,7 +1,7 @@
 'use client';
-
 import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
+import { PrismicRichText } from '@prismicio/react';
 import {
   motion,
   useMotionValue,
@@ -9,7 +9,7 @@ import {
   AnimatePresence,
 } from 'framer-motion';
 
-export const PageCta = () => {
+export const PageCta = ({title, content}) => {
   const sectionRef = useRef(null);
   const [hoveredIndex, setHoveredIndex] = useState(null); // null = show default
   const y = useMotionValue(0);
@@ -102,18 +102,22 @@ export const PageCta = () => {
       </motion.div> */}
 
       <div className="w-full md:w-1/3 h-full flex flex-col justify-between z-10">
-        <h2 id="cta-heading" className="text-2xl md:text-4xl/12 lg:text-5xl/15 font-display">
-          Welcome to the Mahonyverse
-        </h2>
+        <PrismicRichText 
+          field={title} 
+          components={{
+            heading3: ({children}) => <h3 id="cta-heading" className="text-2xl md:text-4xl/12 lg:text-5xl/15 font-display">{children}</h3>
+          }}
+        />
         <div>
-          <p className="text-xl font-display">
-            Here you can encounter A/V, find information about lessons and
-            readings, explore the fabric of the Mahonyverse, noodles and others
-            . . .
-          </p>
-          <p className="mt-8 text-base font-display">
+          <PrismicRichText 
+            field={content} 
+            components={{
+              paragraph: ({children}) => <p className="text-xl font-display mb-8 last:mb-0">{children}</p>
+            }}
+          />
+          {/* <p className="mt-8 text-base font-display">
             “People just like the way he says 'ham' . . ."
-          </p>
+          </p> */}
         </div>
       </div>
 

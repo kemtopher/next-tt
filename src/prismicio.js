@@ -1,12 +1,8 @@
 import { createClient as baseCreateClient } from '@prismicio/client';
 import { enableAutoPreviews } from '@prismicio/next';
-import sm from '../slicemachine.config.json';
 
-/**
- * The project's Prismic repository name.
- */
-export const repositoryName =
-  process.env.NEXT_PUBLIC_PRISMIC_ENVIRONMENT || sm.repositoryName;
+export const repositoryName = process.env.PRISMIC_REPOSITORY_NAME || 'tt-mahony';
+export const accessToken = process.env.PRISMIC_ACCESS_TOKEN;
 
 /**
  * A list of Route Resolver objects that define how a document's `url` field is resolved.
@@ -15,11 +11,11 @@ export const repositoryName =
  *
  * @type {import("@prismicio/client").Route[]}
  */
-// TODO: Update the routes array to match your project's route structure.
 const routes = [
-  // Examples:
-  // { type: "homepage", path: "/" },
-  // { type: "page", path: "/:uid" },
+  { type: "home_page", path: "/" },
+  { type: "lessons_page", path: "/lessons" },
+  { type: "blog_entry", path: "/journal/:uid" },
+  { type: "back_page_media", path: "/backpages/:uid" },
 ];
 
 /**
@@ -31,10 +27,11 @@ const routes = [
 export const createClient = (config = {}) => {
   const client = baseCreateClient(repositoryName, {
     routes,
+    accessToken: process.env.PRISMIC_ACCESS_TOKEN,
     fetchOptions:
       process.env.NODE_ENV === 'production'
         ? { next: { tags: ['prismic'] }, cache: 'force-cache' }
-        : { next: { revalidate: 5 } },
+        : { next: { revalidate: 5}, cache: 'no-store'},
     ...config,
   });
 
