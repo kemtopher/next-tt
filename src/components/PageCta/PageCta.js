@@ -70,7 +70,7 @@ export const PageCta = ({title, content}) => {
   return (
     <section
       ref={sectionRef}
-      className="h-[555px] relative col-span-6 md:col-span-12 py-16 flex flex-col md:flex-row justify-between gap-16 overflow-hidden"
+      className="min-h-[555px] relative col-span-6 md:col-span-12 py-16 flex flex-col md:flex-row justify-between gap-8 lg:gap-16 overflow-hidden"
       aria-labelledby="cta-heading"
     >
       {/* Crossfading Background Image */}
@@ -101,18 +101,18 @@ export const PageCta = ({title, content}) => {
         </div>
       </motion.div> */}
 
-      <div className="w-full md:w-1/3 h-full flex flex-col justify-between z-10">
+      <div className="h-full w-full md:w-[50%] lg:w-1/3 max-w-[500px] lg:max-w-full flex flex-col text-center md:text-left m-auto md:m-0 justify-between z-10">
         <PrismicRichText 
           field={title} 
           components={{
-            heading3: ({children}) => <h3 id="cta-heading" className="text-2xl md:text-4xl/12 lg:text-5xl/15 font-display">{children}</h3>
+            heading3: ({children}) => <h3 id="cta-heading" className="text-3xl/10 md:text-4xl/12 lg:text-5xl/15 mb-6 md:mb-4 font-display font-bold md:font-medium">{children}</h3>
           }}
         />
         <div>
           <PrismicRichText 
             field={content} 
             components={{
-              paragraph: ({children}) => <p className="text-xl font-display mb-8 last:mb-0">{children}</p>
+              paragraph: ({children}) => <p className="text-lg md:text-xl font-display mb-8 last:mb-0">{children}</p>
             }}
           />
           {/* <p className="mt-8 text-base font-display">
@@ -121,7 +121,7 @@ export const PageCta = ({title, content}) => {
         </div>
       </div>
 
-      <div className="w-[40%] h-full flex flex-col justify-between z-10">
+      <div className="w-full md:w-[45%] lg:w-[50%] 2xl:w-[35%] h-full flex flex-col items-center md:items-stretch justify-between z-10">
         {links.map((link, idx) => (
           <a
             key={idx}
@@ -132,11 +132,11 @@ export const PageCta = ({title, content}) => {
             onMouseLeave={() => !isMobile && setHoveredIndex(null)}
             onFocus={() => !isMobile && setHoveredIndex(idx)}
             onBlur={() => !isMobile && setHoveredIndex(null)}
-            className="group flex justify-between items-center font-display text-6xl/20 hover:text-accent group"
+            className="group flex justify-between items-center font-display text-5xl/24 md:text-5xl/20 lg:text-6xl/20 hover:text-accent group"
           >
             <span>{link.label}</span>
             <span
-              className={`w-1/4 h-[2em] flex items-center justify-center ${
+              className={`w-1/4 h-[2em] hidden md:flex items-center justify-center ${
                 isMobile ? 'opacity-0' : 'opacity-0 group-hover:opacity-100'
               }`}
               aria-hidden="true"
