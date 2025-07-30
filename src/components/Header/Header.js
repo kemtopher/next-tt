@@ -11,8 +11,7 @@ export const Header = () => {
       <div className="w-full py-7 flex justify-between items-center">
         <div className="self-center w-[92px] h-[106px] relative">
           <Link href="/">
-            {/* use scale(600) */}
-            <MainLogo classes={styles.scaleLogo} />
+            <MainLogo classes={`${styles.scaleLogo} scale-350 sm:scale-450 md:scale-400 lg:scale-550 xl:scale-600`} />
           </Link>
         </div>
 
