@@ -1,26 +1,33 @@
 'use client'
 
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import Link from 'next/link';
 import { motion, useAnimation } from 'framer-motion';
 import { MainLogo } from '../MainLogo/MainLogo';
 import { SocialBar } from '../SocialBar/SocialBar';
-import styles from "./AnimatedHeader.module.css"
+import styles from "./AnimatedHeader.module.css";
+
+// Globally available
+const getInitialScale = () => {
+  if (typeof window === 'undefined') return 1;
+  const w = window.innerWidth;
+  if (w >= 1280) return 6;
+  if (w >= 1024) return 5.5;
+  if (w >= 768) return 4;
+  if (w >= 640) return 4.5;
+  return 3.5;
+};
 
 export const AnimatedHeader = ({heroRef}) => {
   const logoControls = useAnimation();
-  const headerRef = useRef();
-  const [initialScale, setInitialScale] = useState(1);
-  const [intersectionRatio, setIntersectionRatio] = useState(1); // default to fully in view
+  const headerRef = useRef(); 
 
-  useEffect(() => {
-    const w = window.innerWidth;
-    if (w >= 1280) setInitialScale(6);        // xl
-    else if (w >= 1024) setInitialScale(5.5); // lg
-    else if (w >= 768) setInitialScale(4);    // md
-    else if (w >= 640) setInitialScale(4.5);  // sm
-    else setInitialScale(3.5);                // base
-  }, []);
+  const initialScale = useRef(getInitialScale());
+  const [intersectionRatio, setIntersectionRatio] = useState(1); // default to fully in view 
+
+  // useLayoutEffect(() => {
+  //   setInitialScale(getInitialScale());
+  // }, [])
 
   // // create observer set to ref
   useEffect(() => {
@@ -42,26 +49,24 @@ export const AnimatedHeader = ({heroRef}) => {
 
   // fire observer after mount
   useEffect(() => {
-    const scale = 1 + (initialScale - 1) * intersectionRatio;
-    logoControls.start({ scale });
-  }, [intersectionRatio, initialScale]);
+    const scale = 1 + (initialScale.current - 1) * intersectionRatio;
+    logoControls.start({ scale , opacity: 1});
+  }, [intersectionRatio, initialScale.current]);
 
 
   return (
     <header ref={headerRef} className={styles.header}>
       <div className="w-full py-7 flex justify-between items-center">
-        {/* <div className="self-center w-[92px] h-[106px] relative"> */}
-          <motion.div
-            className="self-center w-[92px] h-[106px] relative origin-top-left"
-            animate={logoControls}
-            initial={{ scale: initialScale }}
-            transition={{ type: 'tween', ease: 'linear', duration: 0 }}
-          >
-            <Link href="/">
-              <MainLogo classes={styles.scaleLogo} />
-            </Link>
-          </motion.div>
-        {/* </div> */}
+        <motion.div
+          className="self-center w-[92px] h-[106px] relative origin-top-left"
+          animate={logoControls}
+          initial={{ scale: initialScale.current, opacity: 0 }}
+          transition={{ type: 'tween', ease: 'linear', duration: 0 }}
+        >
+          <Link href="/">
+            <MainLogo classes={styles.scaleLogo} />
+          </Link>
+        </motion.div>
 
         <div className="h-2/3 hidden md:flex flex-col justify-between self-center">
           <nav>
