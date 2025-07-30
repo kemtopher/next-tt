@@ -2,7 +2,6 @@ import Head from 'next/head';
 import './globals.css';
 import { Kaisei_Opti } from 'next/font/google';
 import { Montserrat } from 'next/font/google';
-import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
 import { QuoteBlock } from '../components/QuoteBlock/QuoteBlock';
 
@@ -28,15 +27,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const quote = `He who who binds to himself a joy\n\nDoes the winged life destroy;\n\nHe who kisses the joy as it flies\n\nLives in eternity’s sunrise.`;
-
   const quoteRich = quote.split('\n').map((line, i) => <p key={i}>{line}</p>);
 
   return (
     <html lang="en">
       <body
-        className={`${kaiseiOpti.variable} ${montserrat.variable} pt-40 px-4 md:px-10 lg:px-18 2xl:max-w-[1700px] 2xl:m-auto`}
+        className={`${kaiseiOpti.variable} ${montserrat.variable} px-4 md:px-10 lg:px-18 2xl:max-w-[1700px] 2xl:m-auto`}
       >
-        <Header />
         {children}
         <QuoteBlock content={quoteRich} author="William Blake" />
         <Footer />

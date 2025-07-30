@@ -1,18 +1,20 @@
+'use client'
+
 import React from 'react';
+import Link from 'next/link';
 import { MainLogo } from '../MainLogo/MainLogo';
 import { SocialBar } from '../SocialBar/SocialBar';
-import Link from 'next/link';
-import { px } from 'framer-motion';
 import styles from "./Header.module.css"
 
 export const Header = () => {
+
   return (
     <header className={styles.header}>
       <div className="w-full py-7 flex justify-between items-center">
         <div className="self-center w-[92px] h-[106px] relative">
-          <Link href="/">
-            <MainLogo classes={`${styles.scaleLogo} scale-350 sm:scale-450 md:scale-400 lg:scale-550 xl:scale-600`} />
-          </Link>
+            <Link href="/">
+              <MainLogo classes={styles.scaleLogo} />
+            </Link>
         </div>
 
         <div className="h-2/3 hidden md:flex flex-col justify-between self-center">
@@ -31,7 +33,7 @@ export const Header = () => {
                 Journal
               </Link>
               <Link
-                href="/backpage"
+                href="/backpages"
                 className="text-sm font-display hover:text-accent font-medium"
               >
                 Back Page

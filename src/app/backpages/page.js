@@ -2,6 +2,7 @@ import React from 'react';
 import { GridContainer } from '../../components/GridContainer/GridContainer';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { BackPageCard } from '../../components/BackPagCard/BackPageCard';
+import { Header } from '../../components/Header/Header';
 
 export default function BackPages() {
   const rows = [];
@@ -10,7 +11,8 @@ export default function BackPages() {
   }
   return (
     <>
-      <main className="w-full pb-8 md:pb-12 lg:pb-18">
+      <Header />
+      <main className="w-full pt-40 pb-8 md:pb-12 lg:pb-18">
         <PageHeader title="BACK PAGE" />
         <GridContainer
           classes="gap-y-12 md:gap-y-20 pt-18"

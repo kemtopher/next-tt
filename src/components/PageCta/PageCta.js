@@ -17,9 +17,9 @@ export const PageCta = ({title, content}) => {
   const defaultImage = '/journal-photograph.png';
 
   const links = [
-    { label: 'Lessons', href: '#', image: '/pull-form.jpg' },
-    { label: 'Journal', href: '#', image: '/journal-photograph.png' },
-    { label: 'Back Page', href: '#', image: '/pull-form.jpg' },
+    { label: 'Lessons', href: '/lessons', image: '/pull-form.jpg' },
+    { label: 'Journal', href: '/journal', image: '/journal-photograph.png' },
+    { label: 'Back Pages', href: '/backpages', image: '/pull-form.jpg' },
   ];
 
   <div className="hidden">
@@ -70,7 +70,7 @@ export const PageCta = ({title, content}) => {
   return (
     <section
       ref={sectionRef}
-      className="h-[555px] relative col-span-6 md:col-span-12 py-16 flex flex-col md:flex-row justify-between gap-16 overflow-hidden border-b"
+      className="h-[555px] relative col-span-6 md:col-span-12 py-16 flex flex-col md:flex-row justify-between gap-16 overflow-hidden"
       aria-labelledby="cta-heading"
     >
       {/* Crossfading Background Image */}

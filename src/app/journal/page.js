@@ -2,6 +2,7 @@ import React from 'react';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { GridContainer } from '../../components/GridContainer/GridContainer';
 import { JournalCard } from '../../components/JournalCard/JournalCard';
+import { Header } from '../../components/Header/Header';
 
 export default function Journal() {
   const rows = [];
@@ -21,7 +22,8 @@ export default function Journal() {
 
   return (
     <>
-      <main className="w-full pb-8 md:pb-12 lg:pb-18">
+      <Header />
+      <main className="w-full pt-40 pb-8 md:pb-12 lg:pb-18">
         <PageHeader title="JOURNAL" />
         <GridContainer classes="py-16 flex flex-col gap-8">
           {rows}

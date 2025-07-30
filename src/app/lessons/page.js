@@ -4,6 +4,7 @@ import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { GridContainer } from '../../components/GridContainer/GridContainer';
 import { PageIntro } from '../../components/PageIntro/PageIntro';
 import { ImageWithText } from '../../components/ImageWithText/ImageWithText';
+import { Header } from '../../components/Header/Header';
 
 export default async function Lessons() {
   const client = createClient();
@@ -11,7 +12,8 @@ export default async function Lessons() {
 
   return (
     <>
-      <main className="w-full">
+      <Header />
+      <main className="w-full pt-40">
         <PageHeader title="LESSONS" />
         <GridContainer classes="pt-16 flex flex-col">
           <PageIntro content={ lessonsPage.data.hero_intro } />
