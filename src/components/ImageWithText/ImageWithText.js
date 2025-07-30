@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import { PrismicRichText } from '@prismicio/react';
@@ -20,14 +18,14 @@ export const ImageWithText = ({
 
   return (
     <section
-      className={`flex gap-8 lg:gap-14 py-18 lg:py-20 justify-between ${mobileDirection} ${desktopDirection} w-full h-full border-b ${classes}`}
+      className={`flex gap-8 lg:gap-14 py-18 lg:py-20 justify-end ${mobileDirection} ${desktopDirection} w-full h-full border-b relative ${classes}`}
     >
-      <div className="relative w-full md:w-1/2 aspect-square">
+      <div className="h-[35vh] md:h-[55vh] lg:h-[45vh] sm:h-[60%] md:min-h-full w-full md:w-1/2 aspect-square absolute left-[20%] md:left-[15%] top-[15%] sm:top-1/5 md:top-1/2 -translate-1/2 rotate-2 -z-1">
         <Image
           src={imageUrl}
           alt={alt}
           fill
-          className="object-cover"
+          className="object-cover xl:object-contain"
           sizes="(max-width: 768px) 100vw, 33vw"
           priority
         />
