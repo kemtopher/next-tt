@@ -4,14 +4,15 @@ import { SocialBar } from '../SocialBar/SocialBar';
 
 export const Footer = () => {
   return (
-    <footer className="w-full pt-6 sm:pt-8 md:pt-12 border-t flex flex-col justify-center">
+    <footer className="w-full pb-24 md:pb-0 pt-6 sm:pt-8 md:pt-12 border-t flex flex-col justify-center">
       <div className="h-[150px] sm:h-[180px] md:h-[200px]">
-        <GridContainer classes="footer-top">
-          <div className="col-span-3 md:col-span-6">
-            <div className="h-full flex flex-col">
-              <p className="font-display text-xs sm:text-base mb-4">Contact:</p>
+        {/* <GridContainer classes="footer-top"> */}
+        <div className="flex flex-col md:flex-row">
+          <div className="w-full">
+            <div className="h-full flex flex-col text-center md:text-left mb-8 md:mb-0">
+              <p className="font-display text-base mb-4">Contact:</p>
               <a
-                className="font-display text-base sm:text-xl"
+                className="font-display text-xl mb-2"
                 href="mailto:teentabernacle@gmail.com"
               >
                 teentabernacle@gmail.com
@@ -25,15 +26,17 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="h-full col-span-3 md:col-span-6 flex justify-end">
-            <div className="text-left">
-              <p className="font-display text-xs sm:text-base">
+          <div className="h-full w-full flex justify-center md:justify-end">
+            <div className="text-center md:text-left">
+              <p className="font-display text-xl">
                 Find me on the web
               </p>
               <SocialBar />
             </div>
           </div>
-        </GridContainer>
+        </div>
+          
+        {/* </GridContainer> */}
       </div>
 
       <div className="h-[69px] hidden md:block">

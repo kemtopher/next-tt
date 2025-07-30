@@ -6,7 +6,7 @@ import IconBluesky from '../icons/IconBluesky';
 import IconYoutube from '../icons/IconYoutube';
 import Link from 'next/link';
 
-export const SocialBar = ({ width = 'min-w-[100px] md:min-w-[185px]' }) => {
+export const SocialBar = ({ width = 'min-w-[80px] sm:min-w-[100px] md:min-w-[185px]' }) => {
   return (
     <div className={`${width} flex justify-between gap-2 mt-6`}>
       <Link href="">
