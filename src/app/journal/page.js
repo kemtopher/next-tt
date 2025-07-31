@@ -1,8 +1,10 @@
 import React from 'react';
+import Image from 'next/image';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { GridContainer } from '../../components/GridContainer/GridContainer';
 import { JournalCard } from '../../components/JournalCard/JournalCard';
 import { Header } from '../../components/Header/Header';
+import styles from './Journal.module.css';
 
 export default function Journal() {
   const rows = [];
@@ -23,6 +25,16 @@ export default function Journal() {
   return (
     <>
       <Header />
+      <div className={styles.journalBgPhoto}>
+        <Image
+          src="/journal-bg-image.png"
+          // alt={alt}
+          fill
+          className="object-cover xl:object-contain"
+          sizes="(max-width: 768px) 100vw, 33vw"
+          priority
+        />
+      </div>
       <main className="w-full pt-40 pb-8 md:pb-12 lg:pb-18">
         <PageHeader title="JOURNAL" />
         <GridContainer classes="py-16 flex flex-col gap-8">
