@@ -7,29 +7,29 @@ import { MainLogo } from '../MainLogo/MainLogo';
 import { SocialBar } from '../SocialBar/SocialBar';
 import styles from "./AnimatedHeader.module.css";
 
-// Globally available
-const getInitialScale = () => {
-  if (typeof window === 'undefined') return 1;
-  const w = window.innerWidth;
-  if (w >= 1280) return 6;
-  if (w >= 1024) return 5.5;
-  if (w >= 768) return 4;
-  if (w >= 640) return 4.5;
-  return 3.5;
-};
-
 export const AnimatedHeader = ({heroRef}) => {
   const logoControls = useAnimation();
   const headerRef = useRef(); 
 
-  const initialScale = useRef(getInitialScale());
+  const [initialScale, setInitialScale] = useState(1);
+  // const initialScale = useRef(getInitialScale());
   const [intersectionRatio, setIntersectionRatio] = useState(1); // default to fully in view 
 
-  // useLayoutEffect(() => {
-  //   setInitialScale(getInitialScale());
-  // }, [])
+  useLayoutEffect(() => {
+    // Globally available
+    const getInitialScale = () => {
+      if (typeof window === 'undefined') return 1;
+      const w = window.innerWidth;
+      if (w >= 1280) return 6;
+      if (w >= 1024) return 5.5;
+      if (w >= 768) return 4;
+      if (w >= 640) return 4.5;
+      return 3.5;
+    };
 
-  // // create observer set to ref
+    setInitialScale(getInitialScale())
+  },[])
+
   useEffect(() => {
     if (!heroRef?.current || !headerRef?.current) return;
 
@@ -49,9 +49,9 @@ export const AnimatedHeader = ({heroRef}) => {
 
   // fire observer after mount
   useEffect(() => {
-    const scale = 1 + (initialScale.current - 1) * intersectionRatio;
+    const scale = 1 + (initialScale - 1) * intersectionRatio;
     logoControls.start({ scale , opacity: 1});
-  }, [intersectionRatio, initialScale.current]);
+  }, [intersectionRatio, initialScale, logoControls]);
 
 
   return (
@@ -61,7 +61,7 @@ export const AnimatedHeader = ({heroRef}) => {
           <motion.div
             className="self-center w-[92px] h-[106px] relative origin-top-left"
             animate={logoControls}
-            initial={{ scale: initialScale.current, opacity: 0 }}
+            initial={{ scale: initialScale, opacity: 0 }}
             transition={{ type: 'tween', ease: 'linear', duration: 0 }}
           >
             <Link href="/">
