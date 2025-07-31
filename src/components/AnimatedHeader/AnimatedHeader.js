@@ -12,7 +12,6 @@ export const AnimatedHeader = ({heroRef}) => {
   const headerRef = useRef(); 
 
   const [initialScale, setInitialScale] = useState(1);
-  // const initialScale = useRef(getInitialScale());
   const [intersectionRatio, setIntersectionRatio] = useState(1); // default to fully in view 
 
   useLayoutEffect(() => {
