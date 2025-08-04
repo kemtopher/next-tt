@@ -12,6 +12,10 @@ html {
   font-size: 16px; /*  set for safety purposes  */
 }
 
+body {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
 @theme {
   --font-display: 'Kaisei Opti', serif;
   --font-secondary: 'Montserrat', sans-serif;
