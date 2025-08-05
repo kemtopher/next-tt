@@ -11,15 +11,19 @@ export default async function Journal() {
   const client = createClient();
   const journalEntries = await client.getAllByType('journal_entry');
 
-  const rows = journalEntries.map((entry, i) => (
+  const rows = journalEntries.map((entry, i) => {
+    console.log(entry);
+
+    return (
       <JournalCard
         key={i}
         fullDate={entry.first_publication_date}
         title={ entry.data.title }
         excerpt={ entry.data.excerpt }
-        link={`/journal/${entry.data.uid}`}
+        link={`/journal/${entry.uid}`}
       />
-    ));
+    )
+  });
 
   return (
     <>

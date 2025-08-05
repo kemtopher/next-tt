@@ -8,7 +8,7 @@ export const JournalCard = ({
   fullDate,
   title,
   excerpt,
-  link = '/',
+  link,
 }) => {
   const date = new Date(fullDate);
 
@@ -30,7 +30,7 @@ export const JournalCard = ({
 
   return (
     <Link
-      href="/"
+      href={link}
       className={styles.JournalCard}
     >
       <div className="h-full w-[125px]">
