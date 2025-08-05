@@ -17,7 +17,6 @@ export default async function Journal() {
         fullDate={entry.first_publication_date}
         title={ entry.data.title }
         excerpt={ entry.data.excerpt }
-        content={ entry.data.post_content } 
         link={`/journal/${entry.data.uid}`}
       />
     ));

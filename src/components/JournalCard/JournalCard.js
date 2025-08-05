@@ -1,5 +1,4 @@
 import React from 'react';
-import { PrismicRichText } from '@prismicio/react';
 import { asText } from '@prismicio/client';
 import IconReadMore from '../icons/IconReadMore';
 import Link from 'next/link';
@@ -9,7 +8,6 @@ export const JournalCard = ({
   fullDate,
   title,
   excerpt,
-  content,
   link = '/',
 }) => {
   const date = new Date(fullDate);
@@ -18,6 +16,7 @@ export const JournalCard = ({
   const day = String(date.getDate()).padStart(2, '0');
   const year = date.getFullYear();
 
+  // leaving in here in case client decides to go alternate route
   function truncateContent(str, maxLength = 144) {
     if (!str) return 'Oh doth my heart yern for some content';
     if (str.length <= maxLength) return str;
@@ -32,11 +31,9 @@ export const JournalCard = ({
   return (
     <Link
       href="/"
-      // className="w-full h-full p-3 md:p-6 border md:border-2 flex gap-4 md:gap-8 group col-span-6 md:col-span-10 xl:col-span-8 2xl:col-span-7"
       className={styles.JournalCard}
     >
       <div className="h-full w-[125px]">
-        {/* <div className="h-full flex flex-col justify-center gap-4 font-secondary pr-6 border-r md:border-r-2 border-black"> */}
         <div className={styles.CardContent}>
           <p className="text-center text-2xl md:text-3xl font-semibold uppercase">
             {month ? month : "no month"}
