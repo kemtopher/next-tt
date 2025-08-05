@@ -14,7 +14,7 @@ export const accessToken = process.env.PRISMIC_ACCESS_TOKEN;
 const routes = [
   { type: "home_page", path: "/" },
   { type: "lessons_page", path: "/lessons" },
-  { type: "blog_entry", path: "/journal/:uid" },
+  { type: "journal_entry", path: "/journal/:uid" },
   { type: "back_page_media", path: "/backpages/:uid" },
 ];
 
