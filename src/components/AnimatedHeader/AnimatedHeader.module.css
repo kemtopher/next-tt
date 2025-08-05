@@ -1,7 +1,6 @@
 .header {
     height: 160px;
-    /* width: calc(100% - 2rem); */
-    width: 100%;
+    width: calc(100% - 2rem);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     background: rgba(255, 255, 255, .95);
@@ -43,7 +42,7 @@
 
 .scaleLogo {
   width: 100%;
-  height: 160px;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
