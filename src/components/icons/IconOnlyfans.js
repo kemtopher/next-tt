@@ -3,7 +3,6 @@ import React from 'react';
 const IconOnlyfans = ({ classes }) => (
   <svg
     id="IconOnlyfans"
-    fill="#000"
     // width="48"
     // height="48"
     className={classes}
