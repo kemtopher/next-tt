@@ -29,33 +29,36 @@ export const ContactCard = ({ name, title, phone, email, website }) => {
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="border shadow-md py-10 px-15 max-w-lg w-full">
-        <div className="font-display font-bold text-3xl mb-1">{name}</div>
-        <div className="font-display italic mb-4">{title}</div>
+      <div className="contact-card border flex flex-col h-auto sm:h-[250px] justify-between shadow-md py-6 py-8 md:py-10 px-8 md:px-13 lg:px-15 max-w-lg w-full">
+        <div className="">
+          <div className="font-display font-bold text-xl md:text-3xl mb-1">{name}</div>
+          <div className="font-display italic mb-4 text-xs xs:text-sm md:text-base">{title}</div>
+        </div>
+        
         <div className="font-display text-md space-y-1">
           <p className="font-secondary">
-            <span className="font-display font-bold">Phone:</span>{' '}
+            <span className="font-display font-bold text-sm xs:text-base">Phone:</span>{' '}
             <a
               href="tel:+16783607349"
-              className="text-slate-600 hover:text-accent"
+              className="hover:text-accent"
             >
               {phone}
             </a>
           </p>
           <p>
-            <span className="font-display font-bold">Email:</span>{' '}
+            <span className="font-display font-bold text-sm xs:text-base">Email:</span>{' '}
             <a
               href={`mailto:${email}`}
-              className="font-secondary text-slate-600 hover:text-accent hover:underline"
+              className="font-secondary hover:text-accent hover:underline"
             >
               {email}
             </a>
           </p>
           <p>
-            <span className="font-display font-bold">Website:</span>{' '}
+            <span className="font-display font-bold text-sm xs:text-base">Website:</span>{' '}
             <a
               href={website}
-              className="font-secondary text-slate-600 hover:text-accent hover:underline"
+              className="font-secondary hover:text-accent hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -65,12 +68,12 @@ export const ContactCard = ({ name, title, phone, email, website }) => {
         </div>
       </div>
 
-      <button
+      {/* <button
         onClick={downloadVCard}
         className="mt-4 inline-block border text-sm hover:text-white font-medium px-4 py-2 hover:cursor-pointer hover:bg-black"
       >
         Download Contact
-      </button>
+      </button> */}
     </div>
   );
 };
