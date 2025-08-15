@@ -3,23 +3,78 @@ import { asText } from "@prismicio/client";
 import { notFound } from "next/navigation";
 import { PrismicRichText } from "@prismicio/react";
 import { Header } from "../../../components/Header/Header";
-import { PageHeader } from "../../../components/PageHeader/PageHeader";
 import { GridContainer } from "../../../components/GridContainer/GridContainer";
+import { ShareBar } from "../../../components/ShareBar/ShareBar"
 
 
 export default async function JournalEntry({params}) {
     const client = createClient();
-    const entry = await client.getByUID('journal_entry', params.uid).catch((err) => notFound());
+    const { uid } = await params; 
+    const entry = await client.getByUID('journal_entry', uid).catch((err) => notFound());
+
+    const date = new Date(entry.first_publication_date);
+    const pubDate = date.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
     return (
         <>
             <Header />
             <main className="w-full pt-40 pb-8 md:pb-12 lg:pb-18">
-            <PageHeader title="JOURNAL" />
             <GridContainer classes="py-16 flex flex-col gap-8">
-                <div className="entry-container col-span-12 md:col-span-10 lg:col-span-8 col-start-1 md:col-start-2 lg:col-start-3">
-                    <h1 className="text-4xl font-bold mb-4 pb-4 border-b">{ asText(entry.data.title) }</h1>
-                    <PrismicRichText field={entry.data.post_content} />
+                <div className="entry-container col-span-12 xl:col-span-8 col-start-1 xl:col-start-3">
+                    <h1 className="heading-secondary pb-6 pb-10 lg:pb-18">{ asText(entry.data.title) }</h1>
+                    <div className="w-full flex justify-between items-end pb-8 mb-16 border-b">
+                        <p className="text-base md:text-xl font-light">{pubDate}</p>
+                        <div className="flex-col items-end">
+                            <p className="text-xs font-light">Share Elsewhere:</p>
+                            <ShareBar className="mt-4" title={ asText(entry.data.title) }/>
+                        </div>
+                    </div>
+                    <PrismicRichText
+                        field={entry.data.post_content}
+                        components={{
+                            heading1: ({ children }) => (
+                            <h1 className="mb-4 text-3xl font-bold">{children}</h1>
+                            ),
+                            heading2: ({ children }) => (
+                            <h2 className="mb-3 text-2xl font-semibold">{children}</h2>
+                            ),
+                            paragraph: ({ children }) => (
+                            <p className="mb-4 text-base md:text-xl lg:text-md">{children}</p>
+                            ),
+                            listItem: ({ children }) => (
+                            <li className="mb-2">{children}</li>
+                            ),
+                            embed: ({ node }) => {
+                                const html = node.oembed?.html ?? "";
+                                const src = html.match(/src="([^"]+)"/)?.[1];
+
+                                if (!src) return null;
+
+                                return (
+                                    <div className="relative my-14 w-full aspect-video overflow-hidden">
+                                    <iframe
+                                        src={src}
+                                        className="absolute inset-0 h-full w-full"
+                                        title={node.oembed?.title || "Embedded video"}
+                                        loading="lazy"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    />
+                                    </div>
+                                );
+                            },
+                            preformatted: ({ children }) => (
+                                <div className="flex justify-center">
+                                    <pre className="font-display text-lg italic leading-relaxed border px-4 py-3 my-16 inline-block rounded overflow-x-auto">
+                                        {children}
+                                    </pre>
+                                </div>
+                                ),
+                            strong: ({ children }) => (
+                                <strong className="font-bold">{children}</strong>
+                            ),
+                        }}
+                    />
                 </div>
             </GridContainer>
             </main>
