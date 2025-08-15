@@ -12,6 +12,10 @@ html {
   font-size: 16px; /*  set for safety purposes  */
 }
 
+.heading-secondary {
+  @apply text-4xl md:text-6xl lg:text-8xl leading-tight md:leading-[1.2] font-display font-bold;
+}
+
 @theme {
   --font-display: 'Kaisei Opti', serif;
   --font-secondary: 'Montserrat', sans-serif;
