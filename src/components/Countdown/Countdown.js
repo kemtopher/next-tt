@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { MainLogo } from "../MainLogo/MainLogo";
 
 const Countdown = () => {
-  const targetDate = new Date("2025-08-15T17:00:00");
+  const targetDate = new Date("2025-08-15T18:00:00");
 
   const calculateTimeLeft = () => {
     const now = new Date();
