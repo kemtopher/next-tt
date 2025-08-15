@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { GridContainer } from '../GridContainer/GridContainer';
 import { SocialBar } from '../SocialBar/SocialBar';
 
@@ -43,44 +44,41 @@ export const Footer = () => {
         <nav className="w-full h-full">
           <ul className="flex flex-row gap-4 sm:gap-8 justify-center">
             <li>
-              <a
-                href=""
-                className="font-display text-xs sm:text-sm md:text-base"
+              <Link
+                href="/lessons"
+                className="font-display text-xs sm:text-sm md:text-base hover:text-accent"
               >
                 LESSONS
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href=""
-                className="font-display text-xs sm:text-sm md:text-base"
+              <Link
+                href="/journal"
+                className="font-display text-xs sm:text-sm md:text-base hover:text-accent"
               >
                 JOURNAL
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href=""
-                className="font-display text-xs sm:text-sm md:text-base"
+              <Link
+                href="/backpages"
+                className="font-display text-xs sm:text-sm md:text-base hover:text-accent"
               >
-                BACK PAGE
-              </a>
+                MY BACK PAGES
+              </Link>
             </li>
             <li>
-              <a
-                href=""
-                className="font-display text-xs sm:text-sm md:text-base"
+              <Link
+                href="/calendar"
+                className="font-display text-xs sm:text-sm md:text-base hover:text-accent"
               >
                 CALENDAR
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href=""
-                className="font-display text-xs sm:text-sm md:text-base"
-              >
+              <Link href="/contact" className="font-display text-xs sm:text-sm md:text-base hover:text-accent">
                 CONTACT
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
