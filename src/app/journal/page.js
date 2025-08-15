@@ -10,10 +10,8 @@ import styles from './Journal.module.css';
 export default async function Journal() {
   const client = createClient();
   const journalEntries = await client.getAllByType('journal_entry');
-
+  
   const rows = journalEntries.map((entry, i) => {
-    console.log(entry);
-
     return (
       <JournalCard
         key={i}
