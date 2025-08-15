@@ -9,15 +9,15 @@ import { JournalNav } from "../../../components/JournalNav/JournalNav";
 import { getPrevNext } from "../../../services/getPrevNext";
 
 
-export default async function JournalEntry({params, entries}) {
+export default async function BackPagesEntry({params}) {
     const client = createClient();
     const { uid } = await params; 
-    const journalEntries = await client.getAllByType('journal_entry');
-    const entry = await client.getByUID('journal_entry', uid).catch((err) => notFound());
+    const backpagesEntries = await client.getAllByType('back_pages_entry');
+    const entry = await client.getByUID('back_pages_entry', uid).catch((err) => notFound());
 
     const date = new Date(entry.first_publication_date);
     const pubDate = date.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    const { prev, next } = getPrevNext(journalEntries, uid, "asc");
+    const { prev, next } = getPrevNext(backpagesEntries, uid, "asc");
 
     return (
         <>
@@ -100,7 +100,7 @@ export default async function JournalEntry({params, entries}) {
 
 export async function generateStaticParams() {
   const client = createClient();
-  const entries = await client.getAllByType("journal_entry");
+  const entries = await client.getAllByType("back_pages_entry");
 
   return entries.map((entry) => ({
     uid: entry.uid,

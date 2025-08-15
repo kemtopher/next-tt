@@ -15,7 +15,7 @@ const routes = [
   { type: "home_page", path: "/" },
   { type: "lessons_page", path: "/lessons" },
   { type: "journal_entry", path: "/journal/:uid" },
-  { type: "back_page_media", path: "/backpages/:uid" },
+  { type: "back_pages_entry", path: "/backpages/:uid" },
 ];
 
 /**

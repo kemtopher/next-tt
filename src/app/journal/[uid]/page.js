@@ -9,7 +9,7 @@ import { JournalNav } from "../../../components/JournalNav/JournalNav";
 import { getPrevNext } from "../../../services/getPrevNext";
 
 
-export default async function JournalEntry({params, entries}) {
+export default async function JournalEntry({params}) {
     const client = createClient();
     const { uid } = await params; 
     const journalEntries = await client.getAllByType('journal_entry');
