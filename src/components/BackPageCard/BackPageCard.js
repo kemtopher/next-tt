@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 
 export const BackPageCard = ({ title, date, link }) => {
-  console.log(new Date(date))
   const fullDate = new Date(date);
   const pubDate = fullDate.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
