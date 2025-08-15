@@ -42,7 +42,7 @@ export default async function Journal() {
           src="/journal-bg-image.png"
           alt="image of knickknack"
           fill
-          className="object-cover xl:object-contain"
+          className="object-cover xl:object-contain left-[20vw]"
           sizes="(max-width: 768px) 100vw, 33vw"
           priority
         />

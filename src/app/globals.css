@@ -7,9 +7,22 @@ md: '768px',
 lg: '1024px',
 xl: '1280px',
 '2xl': '1536px', */
+:root {
+  --focus: #000;
+}
 
 html {
   font-size: 16px; /*  set for safety purposes  */
+}
+
+::selection {
+  background: #000000;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);   /* color + thickness */
+  outline-offset: 3px;  
 }
 
 .heading-secondary {
