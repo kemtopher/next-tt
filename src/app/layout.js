@@ -31,6 +31,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      <link rel="icon" href="/favicon.png" sizes="32x32" />
+      
       <body
         className={`${kaiseiOpti.variable} ${montserrat.variable} px-4 md:px-10 lg:px-18 2xl:max-w-[1700px] 2xl:m-auto`}
       >
