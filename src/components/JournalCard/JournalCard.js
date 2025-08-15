@@ -16,18 +16,6 @@ export const JournalCard = ({
   const day = String(date.getDate()).padStart(2, '0');
   const year = date.getFullYear();
 
-  // leaving in here in case client decides to go alternate route
-  function truncateContent(str, maxLength = 144) {
-    if (!str) return 'Oh doth my heart yern for some content';
-    if (str.length <= maxLength) return str;
-
-    const truncated = str.slice(0, maxLength);
-    const lastSpace = truncated.lastIndexOf(' ');
-    const trimmed = lastSpace > maxLength * 0.7 ? lastSpace : maxLength;
-
-    return str.slice(0, trimmed) + '...';
-  }
-
   return (
     <Link
       href={link}

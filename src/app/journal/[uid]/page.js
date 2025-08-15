@@ -1,19 +1,24 @@
 import { createClient } from "../../../prismicio";
 import { asText } from "@prismicio/client";
 import { notFound } from "next/navigation";
-import { PrismicRichText } from "@prismicio/react";
+import { PrismicRichText, PrismicLink } from "@prismicio/react";
 import { Header } from "../../../components/Header/Header";
 import { GridContainer } from "../../../components/GridContainer/GridContainer";
 import { ShareBar } from "../../../components/ShareBar/ShareBar"
+import { JournalNav } from "../../../components/JournalNav/JournalNav";
+import { getPrevNext } from "../../../services/getPrevNext";
 
 
-export default async function JournalEntry({params}) {
+export default async function JournalEntry({params, entries}) {
     const client = createClient();
     const { uid } = await params; 
+    const journalEntries = await client.getAllByType('journal_entry');
     const entry = await client.getByUID('journal_entry', uid).catch((err) => notFound());
 
     const date = new Date(entry.first_publication_date);
     const pubDate = date.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    const { prev, next } = getPrevNext(journalEntries, uid, "asc");
+
 
     return (
         <>
@@ -63,6 +68,16 @@ export default async function JournalEntry({params}) {
                                     </div>
                                 );
                             },
+                            hyperlink: ({ node, children }) => (
+                            <PrismicLink
+                                field={node.data}
+                                className="text-black underline underline-offset-2 hover:text-accent"
+                                target={node.data.target ?? undefined}
+                                rel={node.data.target ? "noopener noreferrer" : undefined}
+                            >
+                                {children}
+                            </PrismicLink>
+                            ),
                             preformatted: ({ children }) => (
                                 <div className="flex justify-center">
                                     <pre className="font-display text-lg italic leading-relaxed border px-4 py-3 my-16 inline-block rounded overflow-x-auto">
@@ -75,6 +90,8 @@ export default async function JournalEntry({params}) {
                             ),
                         }}
                     />
+
+                    <JournalNav prev={prev} next={next} className="mt-60" />
                 </div>
             </GridContainer>
             </main>
