@@ -15,9 +15,9 @@ export default function Contact() {
             <ContactCard
               name="T.T. Mahony"
               title="Pianist, Teacher, Raconteur, Poncey Lad"
-              phone="678.370.7349"
+              phone="678-370-7349"
               email="teentabernacle@gmail.com"
-              website="https://ttmahony.com"
+              website="ttmahony.com"
             />
           </div>
         </GridContainer>
