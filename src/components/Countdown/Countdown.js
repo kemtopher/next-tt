@@ -24,7 +24,7 @@ const Countdown = () => {
         role="status"
         aria-live="polite"
       >
-        Unfolding The Mahonyverse ...
+        Unfolding the Mahonyverse ...
       </div>
     </div>
   );
