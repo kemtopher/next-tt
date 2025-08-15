@@ -1,10 +1,15 @@
 import React from 'react';
+import { createClient } from '../../prismicio';
 import { GridContainer } from '../../components/GridContainer/GridContainer';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { BackPageCard } from '../../components/BackPagCard/BackPageCard';
 import { Header } from '../../components/Header/Header';
 
-export default function BackPages() {
+export default async function BackPages() {
+  const client = createClient();
+  const journalEntries = await client.getAllByType('back_pages_entry');
+
+
   const rows = [];
   for (let i = 0; i < 6; i++) {
     rows.push(<BackPageCard key={i} />);

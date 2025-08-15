@@ -1,11 +1,6 @@
 'use client';
 import Link from 'next/link';
 
-/**
- * Props:
- *  - prev: { href: string, title: string } | null
- *  - next: { href: string, title: string } | null
- */
 export const JournalNav = ({ prev, next, className }) => {
   // leaving in here in case client decides to go alternate route
   function truncateContent(str, maxLength = 144) {
