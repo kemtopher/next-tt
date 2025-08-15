@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './MainLogo.module.css';
 
-export const MainLogo = ({width="91.31", height="106", classes}) => {
+export const MainLogo = ({width="91.31", height="106", className}) => {
   return (
     <svg
       id="MainLogo"
-      className={classes}
+      className={className}
       width={width}
       height={height}
       role="img"
