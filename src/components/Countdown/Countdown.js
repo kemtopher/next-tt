@@ -1,45 +1,33 @@
 'use client';
 
-import React, { useEffect, useState } from "react";
-import { MainLogo } from "../MainLogo/MainLogo";
+import React from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { MainLogo } from '../MainLogo/MainLogo';
 
 const Countdown = () => {
-  const targetDate = new Date("2025-08-15T18:00:00");
-
-  const calculateTimeLeft = () => {
-    const now = new Date();
-    const difference = targetDate - now;
-
-    if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
-
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white text-black">
-      <MainLogo />
-      <div className="font-display uppercase text-4xl mt-6 text-center">
-        {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
+      <motion.div
+        className="origin-center transform-gpu"
+        animate={prefersReducedMotion ? { scale: 1 } : { scale: [1, 1.2, 1] }}
+        transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+        aria-hidden="true"
+      >
+        {/* Adjust size with Tailwind; CSS wins over SVG width/height attrs */}
+        <MainLogo className="w-40 md:w-56 h-auto z-99999" />
+      </motion.div>
+
+      <div
+        className="font-display font-bold text-xl md:text-2xl mt-20 text-center"
+        role="status"
+        aria-live="polite"
+      >
+        Unfolding The Mahonyverse ...
       </div>
     </div>
   );
-};
+}
 
 export default Countdown;
