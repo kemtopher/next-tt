@@ -1,0 +1,5 @@
+.formBg {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, .95);
+}

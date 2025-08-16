@@ -4,6 +4,7 @@ import { Kaisei_Opti } from 'next/font/google';
 import { Montserrat } from 'next/font/google';
 import { Footer } from '../components/Footer/Footer';
 import { QuoteBlock } from '../components/QuoteBlock/QuoteBlock';
+import { SignupForm } from '../components/SignupForm/SignupForm';
 
 const kaiseiOpti = Kaisei_Opti({
   subsets: ['latin'],
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
         className={`${kaiseiOpti.variable} ${montserrat.variable} px-4 md:px-10 lg:px-18 2xl:max-w-[1700px] 2xl:m-auto`}
       >
         {children}
+        <SignupForm />
         <QuoteBlock content={quoteRich} author="William Blake" />
         <Footer />
       </body>
