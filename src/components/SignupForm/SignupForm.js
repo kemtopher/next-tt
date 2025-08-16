@@ -74,7 +74,7 @@ export const SignupForm = () => {
           </form>
 
           <p id="newsletter-help" className="mt-2 text-sm text-gray-600">
-            I will only email when there's something worth reading.
+            I will only email when there is something worth reading.
           </p>
           <p role="status" aria-live="polite" className="mt-2 text-sm">{message}</p>
         </div>
