@@ -47,7 +47,7 @@ export const ShareBar = ({
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
     //   email: `mailto:?subject=${encodedTitle}&body=${E(`${title}\n\n${url}`)}`,
     };
-  }, [url, title, via, hash]);
+  }, [url, title, via, hash, encodeUrl]);
 
   const copyLink = useCallback(async (event) => {
     try {
