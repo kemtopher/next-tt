@@ -10,6 +10,7 @@ import styles from './Journal.module.css';
 
 export default async function Journal() {
   const client = createClient();
+  const journalPage = await client.getSingle('journal_page');
   const journalEntries = await client.getAllByType('journal_entry');
 
   const trueDate = (entry) =>
@@ -20,6 +21,7 @@ export default async function Journal() {
     .slice()
     .sort((a, b) => (trueDate(b) - trueDate(a))); 
 
+    console.log("Page: ", journalPage)
   return (
     <>
       <Header />
