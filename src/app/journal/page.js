@@ -21,12 +21,11 @@ export default async function Journal() {
     .slice()
     .sort((a, b) => (trueDate(b) - trueDate(a))); 
 
-    console.log("Page: ", journalPage)
   return (
     <>
       <Header />
       <main className="w-full pt-40 pb-8 md:pb-12 lg:pb-18">
-        <PageHeader title="JOURNAL" />
+        <PageHeader title={journalPage.data.page_title[0].text} />
         <GridContainer classes="py-16 flex flex-col gap-8">
           {sorted.map((entry) => (
             <JournalCard
@@ -41,7 +40,7 @@ export default async function Journal() {
       </main>
       <div className={styles.journalBgPhoto}>
         <Image
-          src="/journal-bg-image.png"
+          src={journalPage.data.bg_image.url}
           alt="image of knickknack"
           fill
           className="object-cover xl:object-contain left-[20vw]"
