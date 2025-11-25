@@ -1,5 +1,5 @@
 import { createClient } from '../prismicio';
-// import HomeContent from '../components/HomeContent/HomeContent';
+import HomeContent from '../components/HomeContent/HomeContent';
 import Countdown from '../components/Countdown/Countdown';
 import {TwinklingStars} from '../components/TwinklingStars/TwinklingStars';
 
