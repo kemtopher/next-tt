@@ -16,6 +16,7 @@ export default async function BackPages() {
 
   const sorted = backpagesEntries.slice().sort((a, b) => trueDate(b) - trueDate(a));
 
+  console.log("Data: ", sorted)
   return (
     <>
       <Header />
@@ -28,12 +29,16 @@ export default async function BackPages() {
         > */}
           <div className="pt-[4.5rem] columns-1 sm:columns-2 lg:columns-3 gap-6">
             {sorted.map((entry) => (
-              <div key={entry.id} className="mb-6 break-inside-avoid">
-                <BackPageCard
-                  title={asText(entry.data.title)}
-                  date={trueDate(entry)?.toISOString?.() ?? null}
-                  link={`/backpages/${entry.uid}`}
-                />
+              <div key={entry.id} className="mb-6 break-inside-avoid overflow-hidden relative">
+                <div className="w-full h-full absolute top-0 left-0">
+                  <img src={entry.data.bg_img.url} className="w-full h-full object-cover object-top" />
+                </div>
+                  <BackPageCard
+                    title={asText(entry.data.title)}
+                    date={trueDate(entry)?.toISOString?.() ?? null}
+                    link={`/backpages/${entry.uid}`}
+                    imgOnly={entry.data.img_only}
+                  />
               </div>
             ))}
           </div>
