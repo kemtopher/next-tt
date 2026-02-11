@@ -2,6 +2,7 @@
     "name": "site-ttmahony",
     "version": "0.1.0",
     "private": true,
+    "engines": { "node": "20.x" },
     "scripts": {
         "dev": "next dev",
         "build": "next build",
@@ -18,7 +19,7 @@
         "@prismicio/next": "^2.0.1",
         "@prismicio/react": "^3.2.1",
         "framer-motion": "^12.23.3",
-        "next": "^15.3.8",
+        "next": "15.3.8",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-responsive-masonry": "^2.7.1"
@@ -30,7 +31,7 @@
         "@tailwindcss/postcss": "^4",
         "autoprefixer": "^10.4.21",
         "eslint": "^9",
-        "eslint-config-next": "^15.3.6",
+        "eslint-config-next": "15.3.8",
         "eslint-plugin-jsx-a11y": "^6.10.2",
         "eslint-plugin-simple-import-sort": "^12.1.1",
         "eslint-plugin-unused-imports": "^4.4.1",
