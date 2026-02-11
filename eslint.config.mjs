@@ -5,6 +5,7 @@ import { FlatCompat } from '@eslint/eslintrc';
 
 import unusedImports from 'eslint-plugin-unused-imports';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -20,6 +21,7 @@ export default [
       plugins: {
         'unused-imports': unusedImports,
         'simple-import-sort': simpleImportSort,
+        'jsx-a11y': jsxA11y,
       },
       rules: {
         'unused-imports/no-unused-imports': 'error',
@@ -27,6 +29,10 @@ export default [
         'simple-import-sort/imports': 'error',
         'simple-import-sort/exports': 'error',
         'prefer-const': 'error',
+
+        ...jsxA11y.configs.recommended.rules,
+        'jsx-a11y/anchor-is-valid': 'off',
+
         'no-console': 
           process.env.NODE_ENV === 'production'
             ? 'error' 

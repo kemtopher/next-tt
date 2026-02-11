@@ -25,11 +25,13 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@lhci/cli": "^0.15.1",
     "@slicemachine/adapter-next": "^0.3.78",
     "@tailwindcss/postcss": "^4",
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.4.1",
     "postcss": "^8.5.5",
