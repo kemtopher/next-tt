@@ -38,6 +38,6 @@
         "prettier": "^3.6.2",
         "slice-machine-ui": "^2.16.1",
         "tailwindcss": "^4.1.10",
-        "typescript": "^5.9.3"
+        "typescript": "5.8.3"
     }
 }

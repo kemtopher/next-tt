@@ -31,7 +31,7 @@ export const AnimatedHeader = ({heroRef}) => {
   },[])
 
   useEffect(() => {
-    if (!heroRef?.current || !headerRef?.current) return;
+    if (!heroRef?.current || !headerRef?.current) return () => {}
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -43,7 +43,6 @@ export const AnimatedHeader = ({heroRef}) => {
       }
     );
 
-    observer.observe(heroRef.current);
     return () => observer.disconnect();
   }, [heroRef]);
 

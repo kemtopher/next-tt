@@ -30,6 +30,7 @@ export default async function BackPages() {
             {sorted.map((entry) => (
               <div key={entry.id} className="mb-6 break-inside-avoid overflow-hidden relative">
                 <div className="w-full h-full absolute top-0 left-0">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={entry.data.bg_img.url} className="w-full h-full object-cover object-top" alt="Decorative background for back page article card" />
                 </div>
                   <BackPageCard
