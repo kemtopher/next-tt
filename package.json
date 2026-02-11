@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:strict": "next lint --max-warnings=0",
+    "lint:fix": "next lint --fix",
     "slicemachine": "start-slicemachine",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
@@ -29,6 +30,8 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.4.1",
     "postcss": "^8.5.5",
     "prettier": "^3.6.2",
     "slice-machine-ui": "^2.16.1",
