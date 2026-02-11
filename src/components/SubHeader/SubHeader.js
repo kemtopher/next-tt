@@ -3,7 +3,7 @@ import { PrismicRichText } from '@prismicio/react';
 
 export const SubHeader = ({ content }) => {
   return (
-    <div className="w-full py-2 md:py-4 lg:py-8 border-y-1 border-black">
+    <div className="w-full py-2 md:py-4 lg:py-8 border-y-1 border-black relative z-8">
         <PrismicRichText 
           field={content} 
           components={{

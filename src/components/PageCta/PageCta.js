@@ -8,98 +8,84 @@ import {
   useTransform,
   AnimatePresence,
 } from 'framer-motion';
+import styles from "./PageCta.module.css";
 
-export const PageCta = ({title, content}) => {
+export const PageCta = ({title, content, images}) => {
+  console.log("Images: ", images)
   const sectionRef = useRef(null);
   const [hoveredIndex, setHoveredIndex] = useState(null); // null = show default
   const y = useMotionValue(0);
   const yParallax = useTransform(y, [0, 1], [-20, 20]);
-  const defaultImage = '/journal-photograph.png';
+    // Detect screen size for disabling hover logic on mobile
+  const [isMobile, setIsMobile] = useState(false);
 
   const links = [
     { label: 'Lessons', href: '/lessons', image: '/pull-form.jpg' },
     { label: 'Journal', href: '/journal', image: '/journal-photograph.png' },
     { label: 'Back Pages', href: '/backpages', image: '/pull-form.jpg' },
   ];
+  // const links = images.map((img, i) => (
+  //   { label: img.link_destination, href: }
+  // ))
 
-  <div className="hidden">
-    {[defaultImage, ...links.map((link) => link.image)].map((src, i) => (
-      <Image
-        key={i}
-        src={src}
-        alt=""
-        width={1}
-        height={1}
-        loading={i === 0 ? 'eager' : 'eager'}
-        priority={i === 0}
-        aria-hidden="true"
-      />
-    ))}
-  </div>;
-
-  // Detect screen size for disabling hover logic on mobile
-  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener('resize', checkMobile);
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-
-  // Handle parallax on mousemove
-  useEffect(() => {
-    if (isMobile) return;
-
-    const handleMouseMove = (e) => {
-      const rect = sectionRef.current?.getBoundingClientRect();
-      if (!rect) return;
-      const relY = (e.clientY - rect.top) / rect.height;
-      y.set(relY);
-    };
-
-    const section = sectionRef.current;
-    section?.addEventListener('mousemove', handleMouseMove);
-    return () => section?.removeEventListener('mousemove', handleMouseMove);
-  }, [isMobile, y]);
 
   const activeImage =
     hoveredIndex !== null && !isMobile
       ? links[hoveredIndex].image
-      : defaultImage;
+      : null;
+
+
+  const linkImages = images.map((img, i) => (
+    <Image
+      key={i}
+      src={activeImage}
+      alt=""
+      fill
+      className="object-contain"
+      priority
+      //       loading={i === 0 ? 'eager' : 'eager'}
+      //       priority={i === 0}
+      //       aria-hidden="true"
+      //       width={1}
+      //       height={1}
+    />
+  ))
 
   return (
     <section
       ref={sectionRef}
-      className="min-h-[555px] relative col-span-6 md:col-span-12 py-16 flex flex-col md:flex-row justify-between gap-8 lg:gap-16 overflow-hidden"
+      className="min-h-[555px] relative col-span-6 md:col-span-12 py-16 flex flex-col md:flex-row justify-between gap-8 lg:gap-16 overflow-visible"
       aria-labelledby="cta-heading"
     >
-      {/* Crossfading Background Image */}
-      {/* <motion.div
-        style={{ y: yParallax }}
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vw] z-0"
-        aria-hidden="true"
-      >
-        <div className="relative w-full aspect-[16/9]">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeImage}
-              className="absolute inset-0"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
-            >
-              <Image
-                src={activeImage}
-                alt=""
-                fill
-                className="object-cover"
-                priority
-              />
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </motion.div> */}
+      { images ? (
+        <motion.div
+          style={{ y: yParallax }}
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full min-h-[50vh] z-0"
+          aria-hidden="true"
+        >
+          <div className="relative w-full h-full aspect-[16/9]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeImage}
+                className="absolute inset-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.1, ease: 'easeInOut' }}
+              >
+                { activeImage ? linkImages : null }
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </motion.div>
+      ) : null }
 
       <div className="h-full w-full md:w-[50%] lg:w-1/3 max-w-[500px] lg:max-w-full flex flex-col text-center md:text-left m-auto md:m-0 justify-between z-10">
         <PrismicRichText 
@@ -115,22 +101,19 @@ export const PageCta = ({title, content}) => {
               paragraph: ({children}) => <p className="text-lg md:text-xl font-display mb-8 last:mb-0">{children}</p>
             }}
           />
-          {/* <p className="mt-8 text-base font-display">
-            “People just like the way he says 'ham' . . ."
-          </p> */}
         </div>
       </div>
 
       <div className="w-full md:w-[45%] lg:w-[50%] 2xl:w-[35%] h-full flex flex-col items-center md:items-stretch justify-between z-10">
-        {links.map((link, idx) => (
+        {links.map((link, i) => (
           <a
-            key={idx}
+            key={i}
             href={link.href}
             role="link"
             aria-label={link.label}
-            onMouseEnter={() => !isMobile && setHoveredIndex(idx)}
+            onMouseEnter={() => !isMobile && setHoveredIndex(i)}
             onMouseLeave={() => !isMobile && setHoveredIndex(null)}
-            onFocus={() => !isMobile && setHoveredIndex(idx)}
+            onFocus={() => !isMobile && setHoveredIndex(i)}
             onBlur={() => !isMobile && setHoveredIndex(null)}
             className="group flex justify-between items-center font-display text-5xl/24 md:text-5xl/20 lg:text-6xl/20 hover:text-accent group"
           >

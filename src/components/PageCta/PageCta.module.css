@@ -1,0 +1,17 @@
+.image1, .image2, .image3 {
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    width: 100%;
+    height: 100%;
+}
+
+.image2 {
+    left: 50%;
+    top: 30%;
+}
+
+.image3 {
+    left: 75%;
+    top: 80%;
+}

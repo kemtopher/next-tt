@@ -16,7 +16,6 @@ export default async function BackPages() {
 
   const sorted = backpagesEntries.slice().sort((a, b) => trueDate(b) - trueDate(a));
 
-  console.log("Data: ", sorted)
   return (
     <>
       <Header />
