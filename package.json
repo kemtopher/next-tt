@@ -1,43 +1,35 @@
 {
-    "name": "site-ttmahony",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
-        "lint:strict": "next lint --max-warnings=0",
-        "lint:fix": "next lint --fix",
-        "slicemachine": "start-slicemachine",
-        "format": "prettier --write .",
-        "format:check": "prettier --check ."
-    },
-    "dependencies": {
-        "@prismicio/client": "^7.17.3",
-        "@prismicio/next": "^2.0.1",
-        "@prismicio/react": "^3.2.1",
-        "framer-motion": "^12.23.3",
-        "next": "^15.3.6",
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0",
-        "react-responsive-masonry": "^2.7.1"
-    },
-    "devDependencies": {
-        "@eslint/eslintrc": "^3",
-        "@lhci/cli": "^0.15.1",
-        "@slicemachine/adapter-next": "^0.3.78",
-        "@tailwindcss/postcss": "^4",
-        "autoprefixer": "^10.4.21",
-        "eslint": "^9",
-        "eslint-config-next": "^15.3.6",
-        "eslint-plugin-jsx-a11y": "^6.10.2",
-        "eslint-plugin-simple-import-sort": "^12.1.1",
-        "eslint-plugin-unused-imports": "^4.4.1",
-        "postcss": "^8.5.5",
-        "prettier": "^3.6.2",
-        "slice-machine-ui": "^2.16.1",
-        "tailwindcss": "^4.1.10",
-        "typescript": "5.8.3"
-    }
+  "name": "site-ttmahony",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "slicemachine": "start-slicemachine",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@prismicio/client": "^7.17.3",
+    "@prismicio/next": "^2.0.1",
+    "@prismicio/react": "^3.2.1",
+    "framer-motion": "^12.23.3",
+    "next": "15.3.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-responsive-masonry": "^2.7.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@slicemachine/adapter-next": "^0.3.78",
+    "@tailwindcss/postcss": "^4",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "postcss": "^8.5.5",
+    "prettier": "^3.6.2",
+    "slice-machine-ui": "^2.16.1",
+    "tailwindcss": "^4.1.10"
+  }
 }
