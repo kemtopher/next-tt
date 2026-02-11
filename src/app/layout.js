@@ -1,7 +1,8 @@
-import Head from 'next/head';
 import './globals.css';
+
 import { Kaisei_Opti } from 'next/font/google';
 import { Montserrat } from 'next/font/google';
+
 import { Footer } from '../components/Footer/Footer';
 import { QuoteBlock } from '../components/QuoteBlock/QuoteBlock';
 import { SignupForm } from '../components/SignupForm/SignupForm';

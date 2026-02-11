@@ -1,5 +1,5 @@
-import React from 'react';
 import Link from 'next/link';
+import React from 'react';
 
 export const BackPageCard = ({ title, date, link, imgOnly }) => {
   const fullDate = new Date(date);

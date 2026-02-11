@@ -1,8 +1,9 @@
 import React from 'react';
-import { PageHeader } from '../../components/PageHeader/PageHeader';
-import { GridContainer } from '../../components/GridContainer/GridContainer';
+
 import { ContactCard } from '../../components/ContactCard/ContactCard';
+import { GridContainer } from '../../components/GridContainer/GridContainer';
 import { Header } from '../../components/Header/Header';
+import { PageHeader } from '../../components/PageHeader/PageHeader';
 
 export default function Contact() {
   return (

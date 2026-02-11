@@ -1,6 +1,6 @@
-import React from 'react';
 import Link from 'next/link';
-import { GridContainer } from '../GridContainer/GridContainer';
+import React from 'react';
+
 import { SocialBar } from '../SocialBar/SocialBar';
 
 export const Footer = () => {

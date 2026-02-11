@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { HeroMain } from '../HeroMain/HeroMain';
-import { SubHeader } from '../SubHeader/SubHeader';
-import { PageCta } from '../PageCta/PageCta';
+
 import { AnimatedHeader } from '../AnimatedHeader/AnimatedHeader';
+import { HeroMain } from '../HeroMain/HeroMain';
+import { PageCta } from '../PageCta/PageCta';
+import { SubHeader } from '../SubHeader/SubHeader';
 
 export default function HomeContent({ homePage }) {
   const heroRef = useRef();

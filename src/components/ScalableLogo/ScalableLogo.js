@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './ScalableLogo.module.css';
 
 export const ScalableLogo = ({width="91.31", height="106", classes}) => {

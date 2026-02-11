@@ -1,13 +1,12 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
-import Image from 'next/image';
-import { PrismicRichText } from '@prismicio/react';
 import {
-  motion,
   AnimatePresence,
+  motion,
 } from 'framer-motion';
-import styles from "./PageCta.module.css";
+import Image from 'next/image';
+import React, { useRef, useState } from 'react';
+
 
 export const PageCta = ({
   text,
@@ -26,7 +25,7 @@ export const PageCta = ({
     const img = images[Math.floor(Math.random() * images.length)];
     const top = Math.floor(10 + Math.random() * 80);  // 10–90%
     const left = Math.floor(10 + Math.random() * 80); // 10–90%
-    const rotation = Math.floor(-15 + Math.random() * 30); // -15deg to +15deg
+    // const rotation = Math.floor(-15 + Math.random() * 30); // -15deg to +15deg
     const id = `${Date.now()}-${Math.random()}`;
 
     const stylesObj = {

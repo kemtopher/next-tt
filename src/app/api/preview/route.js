@@ -1,4 +1,5 @@
 import { redirectToPreviewURL } from '@prismicio/next';
+
 import { createClient } from '../../../prismicio';
 
 export async function GET(request) {
