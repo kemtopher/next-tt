@@ -1,17 +1,16 @@
 'use client';
-import React, { useEffect, useState, useRef } from 'react';
-import Image from 'next/image';
 import { PrismicRichText } from '@prismicio/react';
 import {
+  AnimatePresence,
   motion,
   useMotionValue,
   useTransform,
-  AnimatePresence,
 } from 'framer-motion';
-import styles from "./PageCta.module.css";
+import Image from 'next/image';
+import React, { useEffect, useRef,useState } from 'react';
+
 
 export const PageCta = ({title, content, images}) => {
-  console.log("Images: ", images)
   const sectionRef = useRef(null);
   const [hoveredIndex, setHoveredIndex] = useState(null); // null = show default
   const y = useMotionValue(0);
@@ -109,7 +108,6 @@ export const PageCta = ({title, content, images}) => {
           <a
             key={i}
             href={link.href}
-            role="link"
             aria-label={link.label}
             onMouseEnter={() => !isMobile && setHoveredIndex(i)}
             onMouseLeave={() => !isMobile && setHoveredIndex(null)}

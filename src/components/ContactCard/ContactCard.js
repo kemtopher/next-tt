@@ -1,32 +1,33 @@
 'use client';
 import React from 'react';
+
 import { MainLogo } from '../MainLogo/MainLogo';
 
 export const ContactCard = ({ name, title, phone, email, website }) => {
-  const generateVCard = ({ name, title, phone, email, website }) => {
-    return `BEGIN:VCARD
-            VERSION:3.0
-            FN:${name}
-            TITLE:${title}
-            TEL;TYPE=cell:${phone}
-            EMAIL:${email}
-            URL:${website}
-            END:VCARD`;
-  };
+  // const generateVCard = ({ name, title, phone, email, website }) => {
+  //   return `BEGIN:VCARD
+  //           VERSION:3.0
+  //           FN:${name}
+  //           TITLE:${title}
+  //           TEL;TYPE=cell:${phone}
+  //           EMAIL:${email}
+  //           URL:${website}
+  //           END:VCARD`;
+  // };
 
-  const downloadVCard = () => {
-    const vcard = generateVCard({ name, title, phone, email, website });
-    const blob = new Blob([vcard], { type: 'text/vcard' });
-    const url = URL.createObjectURL(blob);
+  // const downloadVCard = () => {
+  //   const vcard = generateVCard({ name, title, phone, email, website });
+  //   const blob = new Blob([vcard], { type: 'text/vcard' });
+  //   const url = URL.createObjectURL(blob);
 
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `${name.replace(/\s+/g, '_')}.vcf`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-  };
+  //   const link = document.createElement('a');
+  //   link.href = url;
+  //   link.download = `${name.replace(/\s+/g, '_')}.vcf`;
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  //   URL.revokeObjectURL(url);
+  // };
 
   return (
     <div className="flex flex-col gap-8">

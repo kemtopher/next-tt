@@ -1,7 +1,8 @@
 'use client'
 
-import React from 'react';
 import { PrismicRichText } from '@prismicio/react'
+import React from 'react';
+
 import { GridContainer } from '../GridContainer/GridContainer';
 
 export const HeroMain = ({ header, subheader, heroRef }) => {

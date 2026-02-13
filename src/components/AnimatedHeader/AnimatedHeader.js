@@ -1,8 +1,9 @@
 'use client'
 
-import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
-import Link from 'next/link';
 import { motion, useAnimation } from 'framer-motion';
+import Link from 'next/link';
+import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
+
 import { MainLogo } from '../MainLogo/MainLogo';
 import { SocialBar } from '../SocialBar/SocialBar';
 import styles from "./AnimatedHeader.module.css";
@@ -30,7 +31,7 @@ export const AnimatedHeader = ({heroRef}) => {
   },[])
 
   useEffect(() => {
-    if (!heroRef?.current || !headerRef?.current) return;
+    if (!heroRef?.current || !headerRef?.current) return () => {};
 
     const observer = new IntersectionObserver(
       ([entry]) => {

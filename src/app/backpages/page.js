@@ -1,10 +1,10 @@
-import React from 'react';
-import { createClient } from '../../prismicio';
 import { asDate, asText } from "@prismicio/client";
-import { GridContainer } from '../../components/GridContainer/GridContainer';
-import { PageHeader } from '../../components/PageHeader/PageHeader';
+import React from 'react';
+
 import { BackPageCard } from '../../components/BackPageCard/BackPageCard';
 import { Header } from '../../components/Header/Header';
+import { PageHeader } from '../../components/PageHeader/PageHeader';
+import { createClient } from '../../prismicio';
 
 export default async function BackPages() {
   const client = createClient();
@@ -30,7 +30,7 @@ export default async function BackPages() {
             {sorted.map((entry) => (
               <div key={entry.id} className="mb-6 break-inside-avoid overflow-hidden relative">
                 <div className="w-full h-full absolute top-0 left-0">
-                  <img src={entry.data.bg_img.url} className="w-full h-full object-cover object-top" />
+                  <img src={entry.data.bg_img.url} className="w-full h-full object-cover object-top" alt="Article card with the text above it" />
                 </div>
                   <BackPageCard
                     title={asText(entry.data.title)}

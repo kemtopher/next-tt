@@ -1,10 +1,11 @@
+import Link from 'next/link';
 import React from 'react';
+
+import IconBluesky from '../icons/IconBluesky';
 import IconInstagram from '../icons/IconInstagram';
 import IconKofi from '../icons/IconKofi';
 import IconOnlyfans from '../icons/IconOnlyfans';
-import IconBluesky from '../icons/IconBluesky';
 import IconYoutube from '../icons/IconYoutube';
-import Link from 'next/link';
 
 export const SocialBar = ({ width = 'min-w-[80px] sm:min-w-[100px] md:min-w-[185px]' }) => {
   return (

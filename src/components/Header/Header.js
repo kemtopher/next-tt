@@ -1,7 +1,8 @@
 'use client'
 
-import React from 'react';
 import Link from 'next/link';
+import React from 'react';
+
 import { MainLogo } from '../MainLogo/MainLogo';
 import { SocialBar } from '../SocialBar/SocialBar';
 import styles from "./Header.module.css"

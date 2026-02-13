@@ -1,10 +1,11 @@
 import React from 'react';
-import { createClient } from '../../prismicio';
-import { PageHeader } from '../../components/PageHeader/PageHeader';
+
 import { GridContainer } from '../../components/GridContainer/GridContainer';
-import { PageIntro } from '../../components/PageIntro/PageIntro';
-import { ImageWithText } from '../../components/ImageWithText/ImageWithText';
 import { Header } from '../../components/Header/Header';
+import { ImageWithText } from '../../components/ImageWithText/ImageWithText';
+import { PageHeader } from '../../components/PageHeader/PageHeader';
+import { PageIntro } from '../../components/PageIntro/PageIntro';
+import { createClient } from '../../prismicio';
 
 export default async function Lessons() {
   const client = createClient();

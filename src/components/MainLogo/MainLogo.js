@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './MainLogo.module.css';
 
 export const MainLogo = ({width="91.31", height="106", className}) => {

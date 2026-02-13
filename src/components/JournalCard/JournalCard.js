@@ -1,7 +1,8 @@
-import React from 'react';
 import { asText } from '@prismicio/client';
-import IconReadMore from '../icons/IconReadMore';
 import Link from 'next/link';
+import React from 'react';
+
+import IconReadMore from '../icons/IconReadMore';
 import styles from "./JournalCard.module.css";
 
 export const JournalCard = ({

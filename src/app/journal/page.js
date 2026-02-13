@@ -1,11 +1,12 @@
-import React from 'react';
-import Image from 'next/image';
 import { asDate } from "@prismicio/client";
-import { createClient } from '../../prismicio';
-import { PageHeader } from '../../components/PageHeader/PageHeader';
+import Image from 'next/image';
+import React from 'react';
+
 import { GridContainer } from '../../components/GridContainer/GridContainer';
-import { JournalCard } from '../../components/JournalCard/JournalCard';
 import { Header } from '../../components/Header/Header';
+import { JournalCard } from '../../components/JournalCard/JournalCard';
+import { PageHeader } from '../../components/PageHeader/PageHeader';
+import { createClient } from '../../prismicio';
 import styles from './Journal.module.css';
 
 export default async function Journal() {

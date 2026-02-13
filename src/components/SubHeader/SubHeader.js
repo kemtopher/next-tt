@@ -1,5 +1,5 @@
-import React from 'react';
 import { PrismicRichText } from '@prismicio/react';
+import React from 'react';
 
 export const SubHeader = ({ content }) => {
   return (

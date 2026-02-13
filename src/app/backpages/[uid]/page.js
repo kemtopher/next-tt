@@ -1,11 +1,12 @@
-import { createClient } from "../../../prismicio";
 import { asText } from "@prismicio/client";
+import { PrismicLink,PrismicRichText } from "@prismicio/react";
 import { notFound } from "next/navigation";
-import { PrismicRichText, PrismicLink } from "@prismicio/react";
-import { Header } from "../../../components/Header/Header";
+
 import { GridContainer } from "../../../components/GridContainer/GridContainer";
-import { ShareBar } from "../../../components/ShareBar/ShareBar"
+import { Header } from "../../../components/Header/Header";
 import { JournalNav } from "../../../components/JournalNav/JournalNav";
+import { ShareBar } from "../../../components/ShareBar/ShareBar"
+import { createClient } from "../../../prismicio";
 import { getPrevNext } from "../../../services/getPrevNext";
 
 
@@ -13,7 +14,13 @@ export default async function BackPagesEntry({params}) {
     const client = createClient();
     const { uid } = await params; 
     const backpagesEntries = await client.getAllByType('back_pages_entry');
-    const entry = await client.getByUID('back_pages_entry', uid).catch((err) => notFound());
+    // const entry = await client.getByUID('back_pages_entry', uid).catch((err) => notFound());
+    let entry;
+    try {
+        entry = await client.getByUID('back_pages_entry', uid);
+    } catch {
+        notFound();
+    }
 
     const date = new Date(entry.first_publication_date);
     const pubDate = date.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });

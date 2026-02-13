@@ -1,22 +1,23 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useCallback, useMemo, useState } from 'react';
+
 import IconBluesky from '../icons/IconBluesky';
+import IconClipboard from '../icons/IconClipboard';
 import IconFacebook from '../icons/IconFacebook';
 import IconX from '../icons/iconX';
-import IconClipboard from '../icons/IconClipboard';
-import Link from 'next/link';
 
-function openPopup(href) {
-  const w = 600, h = 560;
-  const y = window.top?.outerHeight ? (window.top.outerHeight - h) / 2 : 100;
-  const x = window.top?.outerWidth ? (window.top.outerWidth - w) / 2 : 100;
-  window.open(
-    href,
-    '_blank',
-    `popup=yes,toolbar=0,status=0,width=${w},height=${h},left=${x},top=${y}`
-  );
-}
+// function openPopup(href) {
+//   const w = 600, h = 560;
+//   const y = window.top?.outerHeight ? (window.top.outerHeight - h) / 2 : 100;
+//   const x = window.top?.outerWidth ? (window.top.outerWidth - w) / 2 : 100;
+//   window.open(
+//     href,
+//     '_blank',
+//     `popup=yes,toolbar=0,status=0,width=${w},height=${h},left=${x},top=${y}`
+//   );
+// }
 
 export const ShareBar = ({
   url,
@@ -25,7 +26,7 @@ export const ShareBar = ({
   hashtags = [],
   className = '',
   width = 'min-w-[80px] sm:min-w-[100px] md:min-w-[185px]',
-  showNativeShare = true,
+  // showNativeShare = true,
 }) => {
   const [copied, setCopied] = useState(false);
   const encodeUrl = encodeURIComponent;
@@ -73,15 +74,15 @@ export const ShareBar = ({
     }
   }, [url]);
 
-  const nativeShare = useCallback(async () => {
-    if (typeof navigator !== 'undefined' && navigator.share) {
-      try {
-        await navigator.share({ title, url, text: title });
-      } catch {
-        /* user cancelled */
-      }
-    }
-  }, [title, url]);
+  // const nativeShare = useCallback(async () => {
+  //   if (typeof navigator !== 'undefined' && navigator.share) {
+  //     try {
+  //       await navigator.share({ title, url, text: title });
+  //     } catch {
+  //       /* user cancelled */
+  //     }
+  //   }
+  // }, [title, url]);
 
   return (
     <div className={`${width} flex justify-between gap-2 ${className}`}>
