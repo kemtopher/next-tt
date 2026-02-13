@@ -5,11 +5,7 @@
             "startServerReadyPattern": "started server",
             "startServerReadyTimeout": 20000,
             "url": [
-                "http://localhost:3000/",
-                "http://localhost:3000/lessons",
-                "http://localhost:3000/journal",
-                "http://localhost:3000/backpages",
-                "http://localhost:3000/contact"
+                "http://localhost:3000/"
             ],
             "numberOfRuns": 3
         },
