@@ -21,7 +21,8 @@
         "next": "^15.5.12",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "react-responsive-masonry": "^2.7.1"
+        "react-responsive-masonry": "^2.7.1",
+        "picomatch": "^4.0.3"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
