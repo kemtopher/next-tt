@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 
-
 /* xs: '480px',
 sm: '640px',
 md: '768px',
@@ -8,36 +7,36 @@ lg: '1024px',
 xl: '1280px',
 '2xl': '1536px', */
 :root {
-  --focus: #000;
+    --focus: #000;
 }
 
 html {
-  font-size: 16px; /*  set for safety purposes  */
+    font-size: 16px; /*  set for safety purposes  */
 }
 
 ::selection {
-  background: #000000;
-  color: #ffffff;
+    background: #000000;
+    color: #ffffff;
 }
 
 :focus-visible {
-  outline: 2px solid var(--focus);   /* color + thickness */
-  outline-offset: 3px;  
+    outline: 2px solid var(--focus); /* color + thickness */
+    outline-offset: 3px;
 }
 
 .heading-secondary {
-  @apply text-4xl md:text-6xl lg:text-8xl leading-tight md:leading-[1.2] font-display font-bold;
+    @apply text-4xl md:text-6xl lg:text-8xl leading-tight md:leading-[1.2] font-display font-bold;
 }
 
 @theme {
-  --font-display: 'Kaisei Opti', serif;
-  --font-secondary: 'Montserrat', sans-serif;
-  --color-primary: #000000;
-  --color-accent: #0fe400;
-  --color-avocado-300: oklch(0.94 0.11 115.03);
-  --color-avocado-400: oklch(0.92 0.19 114.08);
-  --color-avocado-500: oklch(0.84 0.18 117.33);
-  --color-avocado-600: oklch(0.53 0.12 118.34);
-  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
-  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+    --font-display: 'Kaisei Opti', serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    --color-primary: #000000;
+    --color-accent: #0fe400;
+    --color-avocado-300: oklch(0.94 0.11 115.03);
+    --color-avocado-400: oklch(0.92 0.19 114.08);
+    --color-avocado-500: oklch(0.84 0.18 117.33);
+    --color-avocado-600: oklch(0.53 0.12 118.34);
+    --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+    --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
 }

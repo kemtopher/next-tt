@@ -1,7 +1,8 @@
 import { createClient as baseCreateClient } from '@prismicio/client';
 import { enableAutoPreviews } from '@prismicio/next';
 
-export const repositoryName = process.env.PRISMIC_REPOSITORY_NAME || 'tt-mahony';
+export const repositoryName =
+    process.env.PRISMIC_REPOSITORY_NAME || 'tt-mahony';
 export const accessToken = process.env.PRISMIC_ACCESS_TOKEN;
 
 /**
@@ -12,10 +13,10 @@ export const accessToken = process.env.PRISMIC_ACCESS_TOKEN;
  * @type {import("@prismicio/client").Route[]}
  */
 const routes = [
-  { type: "home_page", path: "/" },
-  { type: "lessons_page", path: "/lessons" },
-  { type: "journal_entry", path: "/journal/:uid" },
-  { type: "back_pages_entry", path: "/backpages/:uid" },
+    { type: 'home_page', path: '/' },
+    { type: 'lessons_page', path: '/lessons' },
+    { type: 'journal_entry', path: '/journal/:uid' },
+    { type: 'back_pages_entry', path: '/backpages/:uid' },
 ];
 
 /**
@@ -25,17 +26,17 @@ const routes = [
  * @param {import("@prismicio/client").ClientConfig} config - Configuration for the Prismic client.
  */
 export const createClient = (config = {}) => {
-  const client = baseCreateClient(repositoryName, {
-    routes,
-    accessToken: process.env.PRISMIC_ACCESS_TOKEN,
-    fetchOptions:
-      process.env.NODE_ENV === 'production'
-        ? { next: { tags: ['prismic'] }, cache: 'force-cache' }
-        : { cache: 'no-store'},
-    ...config,
-  });
+    const client = baseCreateClient(repositoryName, {
+        routes,
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        fetchOptions:
+            process.env.NODE_ENV === 'production'
+                ? { next: { tags: ['prismic'] }, cache: 'force-cache' }
+                : { cache: 'no-store' },
+        ...config,
+    });
 
-  enableAutoPreviews({ client });
+    enableAutoPreviews({ client });
 
-  return client;
+    return client;
 };
