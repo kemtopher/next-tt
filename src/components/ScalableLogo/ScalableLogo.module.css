@@ -1,36 +1,36 @@
 .sc0,
 .sc1,
 .sc2 {
-  fill: none;
+    fill: none;
 }
 
 .sc3 {
-  isolation: isolate;
+    isolation: isolate;
 }
 
 .sc1 {
-  stroke: blue;
-  stroke-width: 2.6px;
+    stroke: blue;
+    stroke-width: 2.6px;
 }
 
 .sc1,
 .sc2 {
-  stroke-miterlimit: 10;
+    stroke-miterlimit: 10;
 }
 
 .sc4 {
-  clip-path: url(#clippath-1);
+    clip-path: url(#clippath-1);
 }
 
 .sc5 {
-  clip-path: url(#clippath-2);
+    clip-path: url(#clippath-2);
 }
 
 .sc6 {
-  fill: #fff;
+    fill: #fff;
 }
 
 .sc2 {
-  stroke: #000;
-  stroke-width: 3.5px;
+    stroke: #000;
+    stroke-width: 3.5px;
 }

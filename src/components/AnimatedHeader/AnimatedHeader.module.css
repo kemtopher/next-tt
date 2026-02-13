@@ -3,7 +3,7 @@
     width: calc(100% - 2rem);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    background: rgba(255, 255, 255, .95);
+    background: rgba(255, 255, 255, 0.95);
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@
 }
 
 .headerWrapper {
-  height: 160px;
+    height: 160px;
     width: calc(100% - 2rem);
     position: fixed;
     top: 0;
@@ -20,35 +20,33 @@
 }
 
 @media (min-width: 768px) {
-  .headerWrapper {
-    left: 2.5rem;
-    width: calc(100% - 5rem);
-  }
+    .headerWrapper {
+        left: 2.5rem;
+        width: calc(100% - 5rem);
+    }
 }
 
 @media (min-width: 1024px) {
-  .headerWrapper {
-    left: 4.5rem;
-    width: calc(100% - 9rem);
-  }
+    .headerWrapper {
+        left: 4.5rem;
+        width: calc(100% - 9rem);
+    }
 }
 
 @media (min-width: 1536px) {
-  .headerWrapper {
-    max-width: 1700px;
-    margin: 0 auto;
-  }
+    .headerWrapper {
+        max-width: 1700px;
+        margin: 0 auto;
+    }
 }
 
 .scaleLogo {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* transform: scale(6); */
-  /* transform-origin: top left; */
-  /* transition: transform 500ms; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transform: scale(6); */
+    /* transform-origin: top left; */
+    /* transition: transform 500ms; */
 }
-
-
