@@ -35,6 +35,7 @@ export default async function BackPages() {
                             className="mb-6 break-inside-avoid overflow-hidden relative"
                         >
                             <div className="w-full h-full absolute top-0 left-0">
+                                {/* eslint-disable-next-line */}
                                 <img
                                     src={entry.data.bg_img.url}
                                     className="w-full h-full object-cover object-top"
