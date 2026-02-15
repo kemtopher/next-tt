@@ -25,10 +25,16 @@ export default function HomeContent({ homePage }) {
                     content={homePage.data.page_links_content}
                     images={homePage.data.welcome_nav}
                 />
-                <Ecommerce 
+                <Ecommerce
                     image={homePage.data.ecommerce_section[0].product_image}
-                    description={homePage.data.ecommerce_section[0].product_form_description[0].text}
-                    header={homePage.data.ecommerce_section[0].product_form_header[0].text}
+                    description={
+                        homePage.data.ecommerce_section[0]
+                            .product_form_description[0].text
+                    }
+                    header={
+                        homePage.data.ecommerce_section[0]
+                            .product_form_header[0].text
+                    }
                 />
             </main>
         </div>
