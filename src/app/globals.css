@@ -33,6 +33,12 @@ html {
     --font-secondary: 'Montserrat', sans-serif;
     --color-primary: #000000;
     --color-accent: #0fe400;
+
+    --color-yellow: #fff3a8;
+    --color-blue:   #b8e4ff;
+    --color-pink:   #ffc9de;
+    --color-green:  #c9f7d2;
+
     --color-avocado-300: oklch(0.94 0.11 115.03);
     --color-avocado-400: oklch(0.92 0.19 114.08);
     --color-avocado-500: oklch(0.84 0.18 117.33);
