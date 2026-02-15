@@ -84,7 +84,7 @@ export const OrderForm = ({ header, description }) => {
   }
 
   return (
-    <section className="w-full max-w-2xl border-1 border-black bg-white text-black p-5 md:p-7">
+    <section className="w-full max-w-2xl border-0 md:border-1 border-black bg-white text-black p-5 md:p-7">
       <header className="mb-6">
         <h2 className="font-black uppercase tracking-tight font-display text-3xl/10 md:text-4xl/12 lg:text-5xl/15">
           {/* Order the T-Shirt */}
