@@ -56,6 +56,7 @@ export const OrderForm = ({ header, description }) => {
     useEffect(() => {
         const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
         if (!siteKey) {
+            {/* eslint-disable-next-line */}
             console.warn('Missing NEXT_PUBLIC_TURNSTILE_SITE_KEY');
             return;
         }
@@ -175,10 +176,11 @@ export const OrderForm = ({ header, description }) => {
             <form onSubmit={onSubmit} className="space-y-6 mt-6">
                 {/* not for you hooman */}
                 <div className="hidden">
-                    <label className="block text-xs font-bold font-display uppercase">
+                    <label htmlFor="company" className="block text-xs font-bold font-display uppercase">
                         Company
                     </label>
                     <input
+                        id="company"
                         value={company}
                         onChange={(e) => setCompany(e.target.value)}
                         className="border-1 border-black p-2"
@@ -189,10 +191,11 @@ export const OrderForm = ({ header, description }) => {
 
                 <div className="grid gap-4 grid-cols-1 lg:grid-cols-2">
                     <div>
-                        <label className="block text-xs font-black uppercase tracking-widest">
+                        <label htmlFor="name" className="block text-xs font-black uppercase tracking-widest">
                             Name
                         </label>
                         <input
+                            id="name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             className="mt-2 w-full border-1 border-black bg-white p-3 text-base focus:ring-0"
@@ -202,10 +205,11 @@ export const OrderForm = ({ header, description }) => {
                     </div>
 
                     <div>
-                        <label className="block text-xs font-black uppercase tracking-widest">
+                        <label htmlFor="email" className="block text-xs font-black uppercase tracking-widest">
                             Email
                         </label>
                         <input
+                            id="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             className="mt-2 w-full border-1 border-black bg-white p-3 text-base focus:ring-0"
@@ -228,6 +232,7 @@ export const OrderForm = ({ header, description }) => {
 
                             return (
                                 <label
+                                    for="size"
                                     key={s.id}
                                     className={[
                                         'size-labels',
@@ -239,6 +244,7 @@ export const OrderForm = ({ header, description }) => {
                                     ].join(' ')}
                                 >
                                     <input
+                                        id="size"
                                         type="radio"
                                         name="size"
                                         value={s.id}
@@ -280,6 +286,7 @@ export const OrderForm = ({ header, description }) => {
 
                             return (
                                 <label
+                                    for="color"
                                     key={c.id}
                                     className={[
                                         'relative cursor-pointer',
@@ -294,6 +301,7 @@ export const OrderForm = ({ header, description }) => {
                                         {c.label}
                                     </p>
                                     <input
+                                        id="color"
                                         type="radio"
                                         name="color"
                                         value={c.id}
@@ -316,10 +324,11 @@ export const OrderForm = ({ header, description }) => {
                 </fieldset>
 
                 <div>
-                    <label className="block text-xs font-black uppercase tracking-widest">
+                    <label htmlFor="notes" className="block text-xs font-black uppercase tracking-widest">
                         Notes (optional)
                     </label>
                     <textarea
+                        id="notes"
                         value={notes}
                         onChange={(e) => setNotes(e.target.value)}
                         className="mt-2 w-full min-h-[110px] border-1 border-black bg-white p-3 text-base focus:ring-0"
@@ -365,7 +374,7 @@ export const OrderForm = ({ header, description }) => {
                             </span>
                         ) : (
                             <span className="text-xs opacity-70">
-                                I'll email back with next steps.
+                                I will email back with next steps.
                             </span>
                         )}
                     </div>

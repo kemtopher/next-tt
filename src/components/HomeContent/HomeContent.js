@@ -3,10 +3,10 @@
 import React, { useRef } from 'react';
 
 import { AnimatedHeader } from '../AnimatedHeader/AnimatedHeader';
+import { Ecommerce } from '../Ecommerce/Ecommerce';
 import { HeroMain } from '../HeroMain/HeroMain';
 import { PageCta } from '../PageCta/PageCta';
 import { SubHeader } from '../SubHeader/SubHeader';
-import { Ecommerce } from '../Ecommerce/Ecommerce';
 
 export default function HomeContent({ homePage }) {
     const heroRef = useRef();

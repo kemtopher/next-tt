@@ -1,6 +1,6 @@
-import React from 'react';
 import Image from 'next/image';
-import styles from './Ecommerce.module.css';
+import React from 'react';
+
 import { OrderForm } from '../OrderForm/OrderForm';
 
 export const Ecommerce = ({ image, description, header }) => {
