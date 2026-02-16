@@ -347,9 +347,10 @@ export const OrderForm = ({ header, description }) => {
                         type="submit"
                         disabled={!canSubmit}
                         className={[
-                            'border-1 border-black bg-black text-white px-5 py-3',
+                            'border-1 border-black bg-white text-black px-5 py-3',
                             'font-black uppercase tracking-widest',
                             'disabled:opacity-40 disabled:cursor-not-allowed',
+                            'hover:cursor-pointer hover:bg-black hover:text-white',
                         ].join(' ')}
                     >
                         {status === 'sending'

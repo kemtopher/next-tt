@@ -5,7 +5,7 @@ import { OrderForm } from '../OrderForm/OrderForm';
 
 export const Ecommerce = ({ image, description, header }) => {
     return (
-        <section className="min-h-[555px] relative py-0 sm:py-16 flex flex-col md:flex-row border-1 md:border-0 justify-between gap-4 md:gap-8 lg:gap-16 overflow-visible">
+        <section className="min-h-[555px] relative py-0 md:py-16 flex flex-col md:flex-row border-1 md:border-0 justify-between gap-4 md:gap-8 lg:gap-16 overflow-visible">
             <div className="w-full md:w-1/2 order-2 md:order-1">
                 <OrderForm header={header} description={description} />
             </div>
