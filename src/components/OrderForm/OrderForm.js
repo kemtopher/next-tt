@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useMemo, useRef,useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 const SIZES = [
     { id: 'sm', label: 'SM' },
@@ -51,12 +51,13 @@ export const OrderForm = ({ header, description }) => {
         );
     }, [name, email, size, color, status]);
 
-
     // loading turnstile widget
     useEffect(() => {
         const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
         if (!siteKey) {
-            {/* eslint-disable-next-line */}
+            {
+                /* eslint-disable-next-line */
+            }
             console.warn('Missing NEXT_PUBLIC_TURNSTILE_SITE_KEY');
             return;
         }
@@ -112,54 +113,56 @@ export const OrderForm = ({ header, description }) => {
     }, []);
 
     async function onSubmit(e) {
-    e.preventDefault();
-    setStatus('sending');
-    setMessage('');
+        e.preventDefault();
+        setStatus('sending');
+        setMessage('');
 
-    try {
-      const res = await fetch('/api/order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name,
-          email,
-          size,
-          color,
-          notes,
-          company,
-          turnstileToken,
-        }),
-      });
+        try {
+            const res = await fetch('/api/order', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    size,
+                    color,
+                    notes,
+                    company,
+                    turnstileToken,
+                }),
+            });
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.error || 'Request failed');
+            const data = await res.json();
+            if (!res.ok) throw new Error(data?.error || 'Request failed');
 
-      setStatus('sent');
-      setMessage('Sent. He’ll reply by email to confirm payment + shipping.');
+            setStatus('sent');
+            setMessage(
+                'Sent. He’ll reply by email to confirm payment + shipping.'
+            );
 
-      setName('');
-      setEmail('');
-      setNotes('');
-      setCompany('');
-      setSize('md');
-      setColor('yellow');
+            setName('');
+            setEmail('');
+            setNotes('');
+            setCompany('');
+            setSize('md');
+            setColor('yellow');
 
-      // reset Turnstile after 200
-      if (window.turnstile && turnstileWidgetIdRef.current) {
-        window.turnstile.reset(turnstileWidgetIdRef.current);
-      }
-      setTurnstileToken('');
-    } catch (err) {
-      setStatus('error');
-      setMessage(err?.message || 'Something went wrong. Try again.');
+            // reset Turnstile after 200
+            if (window.turnstile && turnstileWidgetIdRef.current) {
+                window.turnstile.reset(turnstileWidgetIdRef.current);
+            }
+            setTurnstileToken('');
+        } catch (err) {
+            setStatus('error');
+            setMessage(err?.message || 'Something went wrong. Try again.');
 
-      // reset token
-      if (window.turnstile && turnstileWidgetIdRef.current) {
-        window.turnstile.reset(turnstileWidgetIdRef.current);
-      }
-      setTurnstileToken('');
+            // reset token
+            if (window.turnstile && turnstileWidgetIdRef.current) {
+                window.turnstile.reset(turnstileWidgetIdRef.current);
+            }
+            setTurnstileToken('');
+        }
     }
-  }
 
     return (
         <section className="w-full max-w-2xl border-0 md:border-1 border-black bg-white text-black p-5 md:p-7">
@@ -176,7 +179,10 @@ export const OrderForm = ({ header, description }) => {
             <form onSubmit={onSubmit} className="space-y-6 mt-6">
                 {/* not for you hooman */}
                 <div className="hidden">
-                    <label htmlFor="company" className="block text-xs font-bold font-display uppercase">
+                    <label
+                        htmlFor="company"
+                        className="block text-xs font-bold font-display uppercase"
+                    >
                         Company
                     </label>
                     <input
@@ -191,7 +197,10 @@ export const OrderForm = ({ header, description }) => {
 
                 <div className="grid gap-4 grid-cols-1 lg:grid-cols-2">
                     <div>
-                        <label htmlFor="name" className="block text-xs font-black uppercase tracking-widest">
+                        <label
+                            htmlFor="name"
+                            className="block text-xs font-black uppercase tracking-widest"
+                        >
                             Name
                         </label>
                         <input
@@ -205,7 +214,10 @@ export const OrderForm = ({ header, description }) => {
                     </div>
 
                     <div>
-                        <label htmlFor="email" className="block text-xs font-black uppercase tracking-widest">
+                        <label
+                            htmlFor="email"
+                            className="block text-xs font-black uppercase tracking-widest"
+                        >
                             Email
                         </label>
                         <input
@@ -324,7 +336,10 @@ export const OrderForm = ({ header, description }) => {
                 </fieldset>
 
                 <div>
-                    <label htmlFor="notes" className="block text-xs font-black uppercase tracking-widest">
+                    <label
+                        htmlFor="notes"
+                        className="block text-xs font-black uppercase tracking-widest"
+                    >
                         Notes (optional)
                     </label>
                     <textarea
