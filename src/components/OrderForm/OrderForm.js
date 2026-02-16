@@ -55,10 +55,7 @@ export const OrderForm = ({ header, description }) => {
     useEffect(() => {
         const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
         if (!siteKey) {
-            {
-                /* eslint-disable-next-line */
-            }
-            console.warn('Missing NEXT_PUBLIC_TURNSTILE_SITE_KEY');
+            // console.warn('Missing NEXT_PUBLIC_TURNSTILE_SITE_KEY');
             return;
         }
 
