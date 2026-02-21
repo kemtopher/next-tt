@@ -320,7 +320,7 @@ export const OrderForm = ({ header, description }) => {
                                     />
 
                                     {selected && (
-                                        <div className="absolute inset-0 flex items-center justify-center">
+                                        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
                                             <span className="text-6xl md:text-7xl font-black leading-none text-black opacity-90">
                                                 X
                                             </span>
