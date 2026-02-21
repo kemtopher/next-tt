@@ -83,7 +83,6 @@ export async function POST(req) {
         const to = process.env.ORDER_TO_EMAIL;
         const from = process.env.ORDER_FROM_EMAIL;
         const resendKey = process.env.RESEND_API_KEY;
-        
 
         if (!to || !from || !process.env.RESEND_API_KEY) {
             return NextResponse.json(
