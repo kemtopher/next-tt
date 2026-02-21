@@ -241,7 +241,7 @@ export const OrderForm = ({ header, description }) => {
 
                             return (
                                 <label
-                                    for="size"
+                                    htmlFor={`size-${s.id}`}
                                     key={s.id}
                                     className={[
                                         'size-labels',
@@ -253,7 +253,7 @@ export const OrderForm = ({ header, description }) => {
                                     ].join(' ')}
                                 >
                                     <input
-                                        id="size"
+                                        id={`size-${s.id}`}
                                         type="radio"
                                         name="size"
                                         value={s.id}
@@ -295,7 +295,7 @@ export const OrderForm = ({ header, description }) => {
 
                             return (
                                 <label
-                                    for="color"
+                                    htmlFor={`color-${c.id}`}
                                     key={c.id}
                                     className={[
                                         'relative cursor-pointer',
@@ -310,7 +310,7 @@ export const OrderForm = ({ header, description }) => {
                                         {c.label}
                                     </p>
                                     <input
-                                        id="color"
+                                        id={`color-${c.id}`}
                                         type="radio"
                                         name="color"
                                         value={c.id}
@@ -378,18 +378,17 @@ export const OrderForm = ({ header, description }) => {
                             ? 'Sending…'
                             : 'Email Order Request'}
                     </button>
-
-                    <div className="text-sm" aria-live="polite">
-                        {message ? (
-                            <span className="inline-block border-1 border-black px-3 py-2 bg-white">
-                                {message}
-                            </span>
-                        ) : (
-                            <span className="text-xs opacity-70">
-                                I will email back with next steps.
-                            </span>
-                        )}
-                    </div>
+                </div>
+                <div className="text-sm" aria-live="polite">
+                    {message ? (
+                        <span className="inline-block border-1 border-black px-3 py-2 bg-white">
+                            {message}
+                        </span>
+                    ) : (
+                        <span className="text-xs opacity-70">
+                            I will email back with next steps.
+                        </span>
+                    )}
                 </div>
             </form>
         </section>
