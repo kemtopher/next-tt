@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -84,6 +82,8 @@ export async function POST(req) {
 
         const to = process.env.ORDER_TO_EMAIL;
         const from = process.env.ORDER_FROM_EMAIL;
+        const resendKey = process.env.RESEND_API_KEY;
+        
 
         if (!to || !from || !process.env.RESEND_API_KEY) {
             return NextResponse.json(
@@ -91,6 +91,8 @@ export async function POST(req) {
                 { status: 500 }
             );
         }
+
+        const resend = new Resend(resendKey);
 
         const subject = `T-Shirt Order Request — ${body.name} (${body.size}/${body.color})`;
 
