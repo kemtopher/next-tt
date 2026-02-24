@@ -39,7 +39,7 @@ export const PageCta = ({ title, content, images }) => {
     }, []);
 
     const activeImage =
-        hoveredIndex !== null && !isMobile ? links[hoveredIndex].image : null;
+        hoveredIndex !== null ? links[hoveredIndex].image : links[0].image;
 
     const linkImages = images.map((img, i) => (
         <Image
@@ -89,7 +89,7 @@ export const PageCta = ({ title, content, images }) => {
                 </motion.div>
             ) : null}
 
-            <div className="h-full w-full md:w-[50%] lg:w-1/3 max-w-[500px] lg:max-w-full flex flex-col text-center md:text-left m-auto md:m-0 justify-between z-10">
+            <div className="h-full w-full md:w-[50%] lg:w-1/3 max-w-[500px] lg:max-w-full flex flex-col text-left m-auto md:m-0 justify-between z-10">
                 <PrismicRichText
                     field={title}
                     components={{
@@ -117,14 +117,14 @@ export const PageCta = ({ title, content, images }) => {
                 </div>
             </div>
 
-            <div className="w-full md:w-[45%] lg:w-[50%] 2xl:w-[35%] h-full flex flex-col items-center md:items-stretch justify-between z-10">
+            <div className="w-full md:w-[45%] lg:w-[50%] 2xl:w-[35%] h-full flex flex-col items-start md:items-stretch justify-between z-10">
                 {links.map((link, i) => (
                     <a
                         key={i}
                         href={link.href}
                         aria-label={link.label}
                         onMouseEnter={() => !isMobile && setHoveredIndex(i)}
-                        onMouseLeave={() => !isMobile && setHoveredIndex(null)}
+                        // onMouseLeave={() => !isMobile && setHoveredIndex(null)}
                         onFocus={() => !isMobile && setHoveredIndex(i)}
                         onBlur={() => !isMobile && setHoveredIndex(null)}
                         className="group flex justify-between items-center font-display text-5xl/24 md:text-5xl/20 lg:text-6xl/20 hover:text-accent group"
