@@ -22,6 +22,7 @@ export const Ecommerce = ({ image, description, header }) => {
                     alt={image.alt}
                     width={image.dimensions.width}
                     height={image.dimensions.height}
+                    fetchPriority="high"
                 />
             </div>
         </section>

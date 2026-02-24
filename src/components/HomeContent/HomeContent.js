@@ -7,9 +7,11 @@ import { Ecommerce } from '../Ecommerce/Ecommerce';
 import { HeroMain } from '../HeroMain/HeroMain';
 import { PageCta } from '../PageCta/PageCta';
 import { SubHeader } from '../SubHeader/SubHeader';
+import { SoundCloud } from '../SoundCloud/SoundCloud';
 
-export default function HomeContent({ homePage }) {
+export default function HomeContent({ homePage, soundCloudData }) {
     const heroRef = useRef();
+
     return (
         <div className="pt-40">
             <AnimatedHeader heroRef={heroRef} />
@@ -36,6 +38,7 @@ export default function HomeContent({ homePage }) {
                             .product_form_header[0].text
                     }
                 />
+                <SoundCloud soundCloudData={soundCloudData} />
             </main>
         </div>
     );
