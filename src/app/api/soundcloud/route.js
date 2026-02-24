@@ -5,10 +5,7 @@ export async function GET(req) {
     const url = searchParams.get('url');
 
     if (!url) {
-        return NextResponse.json(
-            { error: 'Missing url' }, 
-            { status: 400 }
-        );
+        return NextResponse.json({ error: 'Missing url' }, { status: 400 });
     }
 
     const oembedUrl = `https://soundcloud.com/oembed?format=json&url=${encodeURIComponent(url)}`;
@@ -22,8 +19,7 @@ export async function GET(req) {
     }
 
     const data = await res.json();
-    console.log('BE Data', data);
-    
+
     return NextResponse.json({
         title: data.title,
         description: data.description,

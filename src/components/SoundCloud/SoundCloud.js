@@ -1,12 +1,12 @@
 'use client';
 
+import { PrismicLink, PrismicRichText } from '@prismicio/react';
 import React from 'react';
-import { PrismicRichText } from '@prismicio/react';
 
 export const SoundCloud = ({ soundCloudData, content }) => {
     const src =
-    'https://w.soundcloud.com/player/?visual=false&scrolling=false&show_artwork=true' +
-    '&url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1195714738';
+        'https://w.soundcloud.com/player/?visual=false&scrolling=false&show_artwork=true' +
+        '&url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1195714738';
 
     return (
         <section className="soundcloud-section py-16">
@@ -46,7 +46,7 @@ export const SoundCloud = ({ soundCloudData, content }) => {
                     />
                 </div>
                 <div className="h-full w-full">
-                    { soundCloudData?.embedHtml && (
+                    {soundCloudData?.embedHtml && (
                         <iframe
                             title="SoundCloud playlist"
                             width="100%"

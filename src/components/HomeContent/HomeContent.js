@@ -6,12 +6,11 @@ import { AnimatedHeader } from '../AnimatedHeader/AnimatedHeader';
 import { Ecommerce } from '../Ecommerce/Ecommerce';
 import { HeroMain } from '../HeroMain/HeroMain';
 import { PageCta } from '../PageCta/PageCta';
-import { SubHeader } from '../SubHeader/SubHeader';
 import { SoundCloud } from '../SoundCloud/SoundCloud';
+import { SubHeader } from '../SubHeader/SubHeader';
 
 export default function HomeContent({ homePage, soundCloudData }) {
     const heroRef = useRef();
-    console.log("HP: ", homePage.data)
 
     return (
         <div className="pt-40">
@@ -39,7 +38,10 @@ export default function HomeContent({ homePage, soundCloudData }) {
                             .product_form_header[0].text
                     }
                 />
-                <SoundCloud soundCloudData={soundCloudData} content={homePage.data.soundcloud_section_content} />
+                <SoundCloud
+                    soundCloudData={soundCloudData}
+                    content={homePage.data.soundcloud_section_content}
+                />
             </main>
         </div>
     );

@@ -15,7 +15,7 @@ const nextConfig = {
                 hostname: 'images.prismic.io',
             },
         ],
-    }
+    },
 };
 
 export default nextConfig;

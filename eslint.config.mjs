@@ -40,8 +40,7 @@ export default [
             ...jsxA11y.configs.recommended.rules,
             'jsx-a11y/anchor-is-valid': 'off',
 
-            'no-console':
-                process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+            'no-console': ['error', { allow: ['warn', 'error'] }],
             'consistent-return': 'warn',
         },
     },
