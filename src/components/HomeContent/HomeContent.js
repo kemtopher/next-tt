@@ -11,6 +11,7 @@ import { SoundCloud } from '../SoundCloud/SoundCloud';
 
 export default function HomeContent({ homePage, soundCloudData }) {
     const heroRef = useRef();
+    console.log("HP: ", homePage.data)
 
     return (
         <div className="pt-40">
@@ -38,7 +39,7 @@ export default function HomeContent({ homePage, soundCloudData }) {
                             .product_form_header[0].text
                     }
                 />
-                <SoundCloud soundCloudData={soundCloudData} />
+                <SoundCloud soundCloudData={soundCloudData} content={homePage.data.soundcloud_section_content} />
             </main>
         </div>
     );

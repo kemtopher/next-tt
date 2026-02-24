@@ -4,8 +4,6 @@ export async function GET(req) {
     const { searchParams } = new URL(req.url);
     const url = searchParams.get('url');
 
-    console.log('BE URL', url);
-
     if (!url) {
         return NextResponse.json(
             { error: 'Missing url' }, 
@@ -32,7 +30,7 @@ export async function GET(req) {
         author: data.author_name,
         thumbnailUrl: data.thumbnail_url,
         height: data.height,
-        width: data.width,
+        width: data.height,
         embedHtml: data.html,
         authorUrl: data.author_url,
     });
