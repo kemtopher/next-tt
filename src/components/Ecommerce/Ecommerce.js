@@ -15,6 +15,7 @@ export const Ecommerce = ({ image, description, header }) => {
                     alt="sticker for shirt price"
                     width={200}
                     height={200}
+                    style={{ width: 'auto', height: 'auto' }}
                     className="absolute left-1/6 top-1/8 md:top-1/5 -translate-x-1/2 -translate-y-1/2 rotate-[-10deg]"
                 />
                 <Image

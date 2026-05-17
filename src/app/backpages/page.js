@@ -36,13 +36,17 @@ export default async function BackPages() {
                             className="mb-6 break-inside-avoid overflow-hidden relative"
                         >
                             <div className="w-full h-full absolute top-0 left-0">
-                                <Image
-                                    src={entry.data.bg_img.url}
-                                    className="w-full h-full object-cover object-top"
-                                    alt="Article card with the text above it"
-                                    width={entry.data.bg_img.width}
-                                    height={entry.data.bg_img.height}
-                                />
+                                {entry?.data?.bg_img?.url ? (
+                                    <Image
+                                        src={entry.data.bg_img.url}
+                                        className="w-full h-full object-cover object-top"
+                                        alt="Article card with the text above it"
+                                        width={entry.data.bg_img.width}
+                                        height={entry.data.bg_img.height}
+                                    />
+                                ) : (
+                                    <div className="w-full h-full bg-neutral-200" />
+                                )}
                             </div>
                             <BackPageCard
                                 title={asText(entry.data.title)}
