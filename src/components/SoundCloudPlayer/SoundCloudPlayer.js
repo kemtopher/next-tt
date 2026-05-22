@@ -215,7 +215,7 @@ export default function SoundCloudPlayer() {
                     ref={iframeRef}
                     title="SoundCloud playlist"
                     width="100%"
-                    height={isHome ? '600' : '1'}
+                    height={isHome ? '600' : '180'}
                     scrolling="no"
                     frameBorder="0"
                     allow="autoplay; encrypted-media; picture-in-picture; clipboard-write"

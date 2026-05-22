@@ -33,11 +33,11 @@
 }
 
 .iframeHostDocked {
-    width: 1px;
-    height: 1px;
+    width: 320px;
+    height: 180px;
     position: fixed;
-    right: 0;
-    bottom: 0;
+    left: -9999px;
+    top: -9999px;
     opacity: 0;
     pointer-events: none;
     overflow: hidden;
